@@ -1,0 +1,8 @@
+vim/.netrwhist
+vim/bundle/*
+vim/local/*
+bash.d/local/before/*
+!bash.d/local/before/.empty
+bash.d/local/after/*
+!bash.d/local/after/.empty
+*.swp
