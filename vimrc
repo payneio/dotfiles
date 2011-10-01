@@ -67,7 +67,8 @@ Bundle 'tpope/vim-fugitive'       , {'name': 'fugitive'}
 Bundle 'tpope/vim-abolish'        , {'name': 'abolish'}
 Bundle 'xolox/vim-notes'
 Bundle 'matchit.zip'              , {'name': 'matchit'}
-Bundle 'mrmargolis/dogmatic.vim'  , {'name': 'dogmatic'}
+"Bundle 'mrmargolis/dogmatic.vim'  , {'name': 'dogmatic'}
+Bundle 'wincent/Command-T', {'name': 'command-t'}
 
 " ===========================================================================
 " Colorschemes
