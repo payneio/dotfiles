@@ -1,4 +1,4 @@
-# Jacobo de Vera's Dot Files
+# eastcave Dot Files
 
 These are the configuration files I want to have in every Linux box I use.
 
@@ -7,7 +7,7 @@ These are the configuration files I want to have in every Linux box I use.
 Installation instructions come first because it is what I need most of the
 time, but if you are not me, please read on :) 
 
-    git clone git://github.com/jdevera/dotfiles ~/.dotfiles
+    git clone git://github.com/eastcave/dotfiles ~/.dotfiles
     cd ~/.dotfiles
     bash install
 
