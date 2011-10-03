@@ -1,20 +1,7 @@
-" ---------------------------------------------------------------------------
-"                           VIM configuration file
-" ---------------------------------------------------------------------------
-" CollectedBy: Jacobo de Vera
-" Website:     http://blog.jacobodevera.com
-" ---------------------------------------------------------------------------
-
-" {{{ One setting to rule them all
-
-" This is Vim, not Vi. If I were to use only one setting this would b it.
 set nocompatible
-
-" }}}
 " {{{ Multiplatform compatibility
 
 if has('win32') || has('win64')
-
     " Make windows use ~/.vim too, I don't want to use _vimfiles
     set runtimepath^=~/.vim
 endif
@@ -35,7 +22,7 @@ call vundle#rc()
 " General bundles
 " ===========================================================================
 
-" Manage vundle with vundle, oh yeah!
+" Manage vundle with vundle
 Bundle 'gmarik/vundle'
 
 " Snipmate, dependencies and snippets
@@ -44,31 +31,50 @@ Bundle 'MarcWeber/vim-addon-mw-utils' , {'name': 'markweber-utils'}
 Bundle "garbas/vim-snipmate"      , {'name': 'snipmate'}
 Bundle 'honza/snipmate-snippets'
 
-" Surround and repeat (to make the former repeatable)
-Bundle 'tpope/vim-repeat'         , {'name': 'repeat'}
-Bundle 'tpope/vim-surround'       , {'name': 'surround'}
-
-Bundle 'Align'                    , {'name': 'align'}
-Bundle 'camelcasemotion'
-Bundle 'Color-Scheme-Explorer'    , {'name': 'cs-explorer'}
-Bundle 'Conque-Shell'             , {'name': 'conque-shell'}
-Bundle 'davidoc/todo.txt-vim'     , {'name': 'todo-txt'}
-Bundle 'godlygeek/csapprox'
-Bundle 'hallison/vim-markdown'    , {'name': 'markdown'}
-Bundle 'jdevera/vim-stl-syntax'   , {'name': 'stl-syntax'}
-Bundle 'majutsushi/tagbar'
-Bundle 'pylint.vim'               , {'name': 'pylint'}
-Bundle 'python.vim--Vasiliev'     , {'name': 'python-syntax'}
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'ShowMarks'                , {'name': 'showmarks'}
-Bundle 'TaskList.vim'             , {'name': 'tasklist'}
-Bundle 'tpope/vim-fugitive'       , {'name': 'fugitive'}
-Bundle 'tpope/vim-abolish'        , {'name': 'abolish'}
-Bundle 'xolox/vim-notes'
-Bundle 'matchit.zip'              , {'name': 'matchit'}
-"Bundle 'mrmargolis/dogmatic.vim'  , {'name': 'dogmatic'}
-Bundle 'wincent/Command-T', {'name': 'command-t'}
+Bundle 'tpope/vim-abolish'                , {'name': 'abolish'}
+Bundle 'mileszs/ack.vim'                  , {'name': 'ack'}
+Bundle 'Align'                            , {'name': 'align'}
+Bundle 'camelcasemotion'                  , {'name': 'camelcasemotion'}
+Bundle 'kchmck/vim-coffee-script'         , {'name': 'coffeescript'}
+Bundle 'wincent/Command-T'                , {'name': 'command-t'}
+Bundle 'Conque-Shell'                     , {'name': 'conque-shell'}
+Bundle 'Color-Scheme-Explorer'            , {'name': 'cs-explorer'}
+Bundle 'godlygeek/csapprox'               , {'name': 'csapprox'}
+Bundle 'tpope/vim-cucumber'               , {'name': 'cucumber'}
+Bundle 'tpope/vim-endwise'                , {'name': 'endwise'}
+Bundle 'tpope/vim-fugitive'               , {'name': 'fugitive'}
+"Bundle 'mattn/gist-vim'                   , {'name': 'gist'}
+Bundle 'tpope/vim-git'                    , {'name': 'git'}
+Bundle 'tpope/vim-haml'                   , {'name': 'haml'}
+Bundle 'michaeljsmith/vim-indent-object'  , {'name': 'indent_object'}
+Bundle 'wgibbs/vim-irblack'               , {'name': 'irblack'}
+Bundle 'pangloss/vim-javascript'          , {'name': 'javascript'}
+Bundle 'hallison/vim-markdown'            , {'name': 'markdown'}
+Bundle 'matchit.zip'                      , {'name': 'matchit'}
+Bundle 'scrooloose/nerdcommenter'         , {'name': 'nerdcommenter'}
+Bundle 'scrooloose/nerdtree'              , {'name': 'nerdtree'}
+Bundle 'xolox/vim-notes'                  , {'name': 'notes'}
+Bundle 'ajf/puppet-vim'                   , {'name': 'puppet'}
+Bundle 'pylint.vim'                       , {'name': 'pylint'}
+Bundle 'python.vim--Vasiliev'             , {'name': 'python-syntax'}
+Bundle 'tpope/vim-rails'                  , {'name': 'rails'}
+Bundle 'tpope/vim-repeat'                 , {'name': 'repeat'}
+Bundle 'taq/vim-rspec'                    , {'name': 'rspec'}
+Bundle 'ShowMarks'                        , {'name': 'showmarks'}
+Bundle 'altercation/vim-colors-solarized' , {'name': 'solarized'}
+Bundle 'jdevera/vim-stl-syntax'           , {'name': 'stl-syntax'}
+Bundle 'ervandew/supertab'                , {'name': 'supertab'}
+Bundle 'tpope/vim-surround'               , {'name': 'surround'}
+Bundle 'scrooloose/syntastic'             , {'name': 'syntastic'}
+Bundle 'majutsushi/tagbar'                , {'name': 'tagbar'}
+Bundle 'vim-scripts/taglist.vim'          , {'name': 'taglist'}
+Bundle 'vim-scripts/searchfold.vim'       , {'name': 'searchfold'}
+"Bundle 'TaskList.vim'                     , {'name': 'tasklist'}
+Bundle 'timcharper/textile.vim'           , {'name': 'textile'}
+Bundle 'davidoc/todo.txt-vim'             , {'name': 'todo-txt'}
+Bundle 'tpope/vim-unimpaired'             , {'name': 'unimpaired'}
+Bundle 'tpope/vim-vividchalk.git'         , {'name': 'vividchalk'}
+Bundle 'vim-scripts/ZoomWin'              , {'name': 'zoomwin'}
 
 " ===========================================================================
 " Colorschemes
@@ -98,6 +104,9 @@ endif
 " {{{ Behaviour?
 " ----------------------------------------------------------------------------
 
+" Set encoding
+set encoding=utf-8
+
 " Enables file type specific plugins (with specific indentation)
 filetype plugin indent on
 
@@ -107,13 +116,13 @@ set wildmenu
 "Completion list settings
 " First time tab is hit, complete the longest common string
 " Second time tab is hit, list all possible matches
-set wildmode=longest,list
+set wildmode=list:longest,list:full
 
 "Add additional suffixes to the default (to be ignored)
 set suffixes+=,.class,.swp
 
 "Don't tab complete files with these extensions
-set wildignore=*.class,*.swp,*.o,*.pyc
+set wildignore=*.class,*.swp,*.o,*.pyc,*.obj,.git,*.rbc,*.svn,vender/gems/*
 
 " Look for tag files in the same directory of the edited file, and all the way
 " up to the root directory (hence the ;)
@@ -139,16 +148,61 @@ set splitbelow
 " Minimal number of screen lines to keep above and below the cursor.
 set scrolloff=4
 
+" function s:setupWrapping()
+"   set wrap
+"   set wrapmargin=2
+"   set textwidth=72
+" endfunction
+" 
+" function s:setupMarkup()
+"   call s:setupWrapping()
+"   map <buffer> <Leader>p :Hammer<CR>
+" endfunction
+
+" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+
+" md, markdown, and mk are markdown and define buffer-local preview
+ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
+" add json syntax highlighting
+au BufNewFile,BufRead *.json set ft=javascript
+au BufRead,BufNewFile *.txt call s:setupWrapping()
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" load the plugin and indent settings for the detected filetype
+filetype plugin indent on
+
+" Opens an edit command with the path of the currently edited file filled in
+" Normal mode: <Leader>e
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" Opens a tab edit command with the path of the currently edited file filled in
+" Normal mode: <Leader>t
+map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+" Inserts the path of the currently edited file into a command
+" Command mode: Ctrl+P
+cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+
+" Use modeline overrides
+set modeline
+set modelines=10
+
 " ----------------------------------------------------------------------------
 " }}}
 " {{{ Spacing
 " ----------------------------------------------------------------------------
 
 " Number of spaces that a <Tab> in the file counts for.
-set tabstop=4
+set tabstop=2
 
 " Number of spaces to use for each step of (auto)indent
-set shiftwidth=4
+set shiftwidth=2
+
+set softtabstop=2
 
 " A <Tab> in front of a line inserts blanks according to shiftwidth
 " A <BS> deletes shiftwidth spaces at the start of the line
@@ -179,7 +233,6 @@ set listchars=tab:»»,trail:·
 "Enables syntax colouring
 syntax on
 
-
 " Set my preferred font for GUI
 " -----------------------------------------------
 if has('win32') || has('win64')
@@ -189,33 +242,30 @@ elseif has('unix')
 endif
 " -----------------------------------------------
 
-
 " Remove the GUI tool bar (I can't recall having ever used it)
 " -----------------------------------------------
 if has("gui_running")
     set guioptions-=T
 endif
 
-
-" Allow the use of colours for themes
+" Allow the use of colors for themes
 " -----------------------------------------------
 if &term =~ '^\(xterm\|screen\|xterm-color\)$'
     set t_Co=256
 endif
 
-
 " Set a nice colorscheme for GUI and terminal.
 " -----------------------------------------------
-" Note: These colours are set in an after plug-in called colorschemesetter
+" Note: These colors are set in an after plug-in called colorschemesetter
 let g:my_gui_colorscheme = 'molokai'
-let g:my_terminal_colorscheme = 'torte'
+let g:my_terminal_colorscheme = 'desert'
 let g:my_gui_diff_colorscheme = 'rainbow_fruit'
 let g:my_terminal_diff_colorscheme = 'rainbow_fruit'
 " -----------------------------------------------
 
-
 " Show line numbers
 set number
+set ruler
 
 " Highlight search terms
 set hlsearch
@@ -250,7 +300,6 @@ set listchars+=precedes:<,extends:>
 " Use a fixed status line that is always visible
 set laststatus=2
 
-
 " Control what information is shown in the status line
 " ----------------------------------------------------
 " Short version for diffs, to make sure the file name is visible:
@@ -276,6 +325,9 @@ else
 endif
 " -----------------------------------------------
 
+" Directories for swp files
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
 
 " ----------------------------------------------------------------------------
 " }}}
@@ -289,9 +341,6 @@ let mapleader = ","
 " N.B.: Although I'd prefer to use C-F3 for this, this key cobination doesn't
 "       work when vim is run in gnome-terminal.
 silent nnoremap <F5> :TlistToggle<CR>
-
-" <F4> toggles the directory listing window
-silent nnoremap <F4> :NERDTreeToggle<CR>
 
 " Shift+Tab shows the list of jumps in the tag stack.
 nmap  <C-Tab>  :ts<CR>
@@ -494,6 +543,21 @@ let g:tlTokenList = ['\<TODO\>', '\<FIXME\>', '\<QUESTION\>', '\<HACK\>', '\<XXX
 " NERDCommenter: Add a space after the comment symbol
 let NERDSpaceDelims=1
 
+" NERDTree configuration
+let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
+silent nnoremap <F4> :NERDTreeToggle<CR>
+
+" ZoomWin configuration
+" Without setting this, ZoomWin restores windows in a way that causes
+" equalalways behavior to be triggered the next time CommandT is used.
+" This is likely a bludgeon to solve some other issue, but it works
+set noequalalways
+map <Leader><Leader> :ZoomWin<CR> 
+
+" CTags
+map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+map <C-\> :tnext<CR>
+
 " TagList: Generate tags even if the TList window is closed.
 let Tlist_Process_File_Always = 1
 
@@ -532,20 +596,36 @@ if $MYFULLNAME != ""
     let g:snips_author=$MYFULLNAME
 endif
 
+" Unimpaired
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
+" Enable syntastic syntax checking
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_warnings=1
+
+" gist-vim defaults
+if has("mac")
+  let g:gist_clip_command = 'pbcopy'
+elseif has("unix")
+  let g:gist_clip_command = 'xclip -selection clipboard'
+endif
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+
 " ----------------------------------------------------------------------------
 " }}}
 " {{{ Local configuration
 
-" Load local settings. The local settings file is untracked and it is the
-" source of configuration settings that only make sense in some of the
-" machines I use, e.g., I could have some extra settings for work machines or
-" some overrides for remote headless boxes.
-" This should also work on Windows, since ~.vim is added to the runtimepath at
-" the top of this file.
+" Load local settings. 
 " Warning: Additional Bundles should not be included in this file, use the
 "          local/bundles.vim file instead.
-if filereadable(expand('~/.vim/local/config.vim'))
-    execute 'source ' . expand('~/.vim/local/config.vim')
+if filereadable(expand('~/.vim/local/.vimrc'))
+    execute 'source ' . expand('~/.vim/local/.vimrc')
 endif
 
 " }}}
