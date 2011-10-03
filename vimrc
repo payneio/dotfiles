@@ -39,11 +39,9 @@ Bundle 'kchmck/vim-coffee-script'         , {'name': 'coffeescript'}
 Bundle 'wincent/Command-T'                , {'name': 'command-t'}
 Bundle 'Conque-Shell'                     , {'name': 'conque-shell'}
 Bundle 'Color-Scheme-Explorer'            , {'name': 'cs-explorer'}
-"Bundle 'godlygeek/csapprox'               , {'name': 'csapprox'}
 Bundle 'tpope/vim-cucumber'               , {'name': 'cucumber'}
 Bundle 'tpope/vim-endwise'                , {'name': 'endwise'}
 Bundle 'tpope/vim-fugitive'               , {'name': 'fugitive'}
-"Bundle 'mattn/gist-vim'                   , {'name': 'gist'}
 Bundle 'tpope/vim-git'                    , {'name': 'git'}
 Bundle 'tpope/vim-haml'                   , {'name': 'haml'}
 Bundle 'michaeljsmith/vim-indent-object'  , {'name': 'indent_object'}
@@ -69,28 +67,11 @@ Bundle 'scrooloose/syntastic'             , {'name': 'syntastic'}
 Bundle 'majutsushi/tagbar'                , {'name': 'tagbar'}
 Bundle 'vim-scripts/taglist.vim'          , {'name': 'taglist'}
 Bundle 'vim-scripts/searchfold.vim'       , {'name': 'searchfold'}
-"Bundle 'TaskList.vim'                     , {'name': 'tasklist'}
 Bundle 'timcharper/textile.vim'           , {'name': 'textile'}
 Bundle 'davidoc/todo.txt-vim'             , {'name': 'todo-txt'}
 Bundle 'tpope/vim-unimpaired'             , {'name': 'unimpaired'}
 Bundle 'tpope/vim-vividchalk.git'         , {'name': 'vividchalk'}
 Bundle 'vim-scripts/ZoomWin'              , {'name': 'zoomwin'}
-
-" ===========================================================================
-" Colorschemes
-" ===========================================================================
-
-Bundle 'tomasr/molokai'           , {'name' : 'color-molokai'}
-
-" ===========================================================================
-" Addons tracked with my dotfiles repository
-" ===========================================================================
-
-" Real bash syntax
-"Bundle! 'bashsyntax'
-
-" Delay colorscheme setting until we know if csapprox is loaded
-"Bundle! 'colorsetter'
 
 " Load additional local bundles. The local/bundles.vim file, if it exists,
 " contains Bundle specs that make sense only in the current machine. That file
@@ -98,7 +79,6 @@ Bundle 'tomasr/molokai'           , {'name' : 'color-molokai'}
 if filereadable(expand('~/.vim/local/bundles.vim'))
     execute 'source ' . expand('~/.vim/local/bundles.vim')
 endif
-
 
 " }}}
 " {{{ Behaviour?
@@ -230,38 +210,19 @@ set listchars=tab:»»,trail:·
 " {{{ Appearance
 " ----------------------------------------------------------------------------
 
-"Enables syntax colouring
 syntax on
-
-" Set my preferred font for GUI
-" -----------------------------------------------
-if has('win32') || has('win64')
-    set guifont=Lucida\ Console:h12
-elseif has('unix')
-    set guifont=Monaco\ 10
-endif
-" -----------------------------------------------
+set guifont=Droid\ Sans\ Mono:h16
+colorscheme slate
 
 " Remove the GUI tool bar (I can't recall having ever used it)
-" -----------------------------------------------
 if has("gui_running")
     set guioptions-=T
 endif
 
 " Allow the use of colors for themes
-" -----------------------------------------------
 if &term =~ '^\(xterm\|screen\|xterm-color\)$'
     set t_Co=256
 endif
-
-" Set a nice colorscheme for GUI and terminal.
-" -----------------------------------------------
-" Note: These colors are set in an after plug-in called colorschemesetter
-let g:my_gui_colorscheme = 'ir_black'
-let g:my_terminal_colorscheme = 'ir_black'
-let g:my_gui_diff_colorscheme = 'rainbow_fruit'
-let g:my_terminal_diff_colorscheme = 'rainbow_fruit'
-" -----------------------------------------------
 
 " Show line numbers
 set number
