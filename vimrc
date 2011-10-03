@@ -39,7 +39,7 @@ Bundle 'kchmck/vim-coffee-script'         , {'name': 'coffeescript'}
 Bundle 'wincent/Command-T'                , {'name': 'command-t'}
 Bundle 'Conque-Shell'                     , {'name': 'conque-shell'}
 Bundle 'Color-Scheme-Explorer'            , {'name': 'cs-explorer'}
-Bundle 'godlygeek/csapprox'               , {'name': 'csapprox'}
+"Bundle 'godlygeek/csapprox'               , {'name': 'csapprox'}
 Bundle 'tpope/vim-cucumber'               , {'name': 'cucumber'}
 Bundle 'tpope/vim-endwise'                , {'name': 'endwise'}
 Bundle 'tpope/vim-fugitive'               , {'name': 'fugitive'}
@@ -257,8 +257,8 @@ endif
 " Set a nice colorscheme for GUI and terminal.
 " -----------------------------------------------
 " Note: These colors are set in an after plug-in called colorschemesetter
-let g:my_gui_colorscheme = 'molokai'
-let g:my_terminal_colorscheme = 'desert'
+let g:my_gui_colorscheme = 'ir_black'
+let g:my_terminal_colorscheme = 'ir_black'
 let g:my_gui_diff_colorscheme = 'rainbow_fruit'
 let g:my_terminal_diff_colorscheme = 'rainbow_fruit'
 " -----------------------------------------------
@@ -321,7 +321,8 @@ if &diff
     set statusline=[POS=%04l,%04v][%p%%]\ [LEN=%L]\ [F=%F%m%r%h%w]
 else
     "set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-    set statusline=%F%m%r%h%w\ [F=%{&ff}][T=%Y][C=%04v][L=%04l/%04L][%p%%]
+    " set statusline=%F%m%r%h%w\ [F=%{&ff}][T=%Y][C=%04v][L=%04l/%04L][%p%%]
+    set statusline=%F%m%r%h%w
 endif
 " -----------------------------------------------
 
