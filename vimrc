@@ -211,8 +211,14 @@ set listchars=tab:»»,trail:·
 " ----------------------------------------------------------------------------
 
 syntax on
-set guifont=Droid\ Sans\ Mono:h16
 colorscheme slate
+if has('win32') || has('win64')
+  set guifont=Lucida\ Console:h12
+elseif has('unix')
+  set guifont=Droid\ Sans\ Mono\ 11
+elseif has('gui_macvim')
+  set guifont=Droid\ Sans\ Mono:h16
+endif
 
 " Remove the GUI tool bar (I can't recall having ever used it)
 if has("gui_running")
