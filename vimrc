@@ -128,6 +128,9 @@ set splitbelow
 " Minimal number of screen lines to keep above and below the cursor.
 set scrolloff=4
 
+" Wrapped lines don't look good when coding
+set nowrap
+
 " function s:setupWrapping()
 "   set wrap
 "   set wrapmargin=2
