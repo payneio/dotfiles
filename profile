@@ -11,12 +11,6 @@
 #    fi
 #fi
 
-# include local (Brew) bin path before system so brew-installed 
-# utilities will be used in preference to system-installed (e.g. ctag)
-if [ -d "/usr/local/bin" ] ; then
-  PATH="/usr/local/bin:$PATH"
-fi
-
 # include path to .dotfiles scripts
 PATH="$HOME/.bin:$PATH"
 
