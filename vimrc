@@ -519,6 +519,9 @@ let NERDSpaceDelims=1
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 silent nnoremap <F4> :NERDTreeToggle<CR>
 
+" CommandT configuration
+silent nnoremap <F2> :CommandT<CR>
+
 " ZoomWin configuration
 " Without setting this, ZoomWin restores windows in a way that causes
 " equalalways behavior to be triggered the next time CommandT is used.
