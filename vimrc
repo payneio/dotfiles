@@ -315,7 +315,7 @@ let mapleader = ","
 silent nnoremap <F5> :TlistToggle<CR>
 
 " Shift+Tab shows the list of jumps in the tag stack.
-nmap  <C-Tab>  :ts<CR>
+nmap  <C-Tab>  :tags<CR>
 
 " Open the definition in a new tab
 nmap <A-/> :tab split<CR>:exec("tjump ".expand("<cword>"))<CR>
@@ -352,19 +352,9 @@ map <left> :wincmd h<CR>
 map <up> :wincmd k<CR>
 map <down> :wincmd j<CR>
 
-" I get capitalised commands all the time, will try to avoid it with this
-" mapping.
-nnoremap ; :
-
-" Easily move through windows
-" nnoremap <C-h> <C-W>h
-" nnoremap <C-j> <C-W>j
-" nnoremap <C-k> <C-W>k
-" nnoremap <C-l> <C-W>l
-
 " Make shift insert work in the gui as it does in the shell.
 if has('gui_running')
-    silent inoremap <S-Insert> <MiddleMouse>
+    silent noremap! <S-Insert> <MiddleMouse>
 endif
 
 " Diff operations made shorter (Great for merges)
