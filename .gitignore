@@ -6,3 +6,4 @@ bash.d/local/before/*
 bash.d/local/after/*
 !bash.d/local/after/.empty
 *.swp
+*.DS_Store
