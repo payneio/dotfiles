@@ -214,8 +214,9 @@ set listchars=tab:»»,trail:·
 " {{{ Appearance
 " ----------------------------------------------------------------------------
 
-syntax on
-colorscheme slate
+syntax enable
+set background=dark
+colorscheme solarized
 if has('win32') || has('win64')
   set guifont=Lucida\ Console:h12
 elseif has('macunix')
