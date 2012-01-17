@@ -34,6 +34,7 @@ Bundle 'westcave/snipmate-snippets'
 Bundle 'tpope/vim-abolish'                , {'name': 'abolish'}
 Bundle 'mileszs/ack.vim'                  , {'name': 'ack'}
 Bundle 'Align'                            , {'name': 'align'}
+Bundle 'tpope/vim-bundler'                , {'name': 'bundler'}
 Bundle 'camelcasemotion'                  , {'name': 'camelcasemotion'}
 Bundle 'kchmck/vim-coffee-script'         , {'name': 'coffeescript'}
 Bundle 'wincent/Command-T'                , {'name': 'command-t'}
@@ -50,7 +51,6 @@ Bundle 'pangloss/vim-javascript'          , {'name': 'javascript'}
 Bundle 'hallison/vim-markdown'            , {'name': 'markdown'}
 Bundle 'matchit.zip'                      , {'name': 'matchit'}
 Bundle 'scrooloose/nerdcommenter'         , {'name': 'nerdcommenter'}
-Bundle 'scrooloose/nerdtree'              , {'name': 'nerdtree'}
 Bundle 'xolox/vim-notes'                  , {'name': 'notes'}
 Bundle 'ajf/puppet-vim'                   , {'name': 'puppet'}
 Bundle 'pylint.vim'                       , {'name': 'pylint'}
@@ -173,7 +173,6 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 " Use modeline overrides
 set modeline
 set modelines=10
-
 
 " ----------------------------------------------------------------------------
 " }}}
@@ -481,6 +480,8 @@ endif
 " }}}
 " {{{ Abbreviations
 " ----------------------------------------------------------------------------
+iab ddate <C-R>=strftime("%Y-%m-%d")<CR>
+iab empw paul@westcave.com
 
 " {{{ Usual spelling mistakes
 " ---------------------------
@@ -505,10 +506,6 @@ let g:tlTokenList = ['\<TODO\>', '\<FIXME\>', '\<QUESTION\>', '\<HACK\>', '\<XXX
 
 " NERDCommenter: Add a space after the comment symbol
 let NERDSpaceDelims=1
-
-" NERDTree configuration
-let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
-silent nnoremap <F4> :NERDTreeToggle<CR>
 
 " CommandT configuration
 silent nnoremap <F2> :CommandT<CR>
@@ -582,8 +579,7 @@ elseif has("unix")
 endif
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
-
-
+ 
 " ----------------------------------------------------------------------------
 " }}}
 " {{{ Local configuration
