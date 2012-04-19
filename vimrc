@@ -298,18 +298,6 @@ set showmatch
 " Show (partial) command in status line
 set showcmd
 
-
-
-" Highlight lines larger than 120 characters
-" -----------------------------------------------
-highlight rightMargin term=bold ctermfg=red guifg=red guibg=yellow
-match rightMargin /\%<122v.\%>121v/ " Only the 120th char
-" match rightMargin /.\%>121v/        " All chars after the 120th
-" TODO: Turn this into a map, since changing the colorscheme
-"       turns this highlighting off.
-" -----------------------------------------------
-
-
 " Shows the mode (INSERT, VISUAL, REPLACE) in the status bar
 " Enabled by default in vim.
 " set showmode " Overridden by custom statusline
