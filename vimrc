@@ -84,11 +84,11 @@ endif
 " {{{ Behaviour?
 " ----------------------------------------------------------------------------
 
+" load all autocommands only once
+au!
+
 " Set encoding
 set encoding=utf-8
-
-" Enables file type specific plugins (with specific indentation)
-filetype plugin indent on
 
 " Shows autocomplete menu for commands
 set wildmenu
