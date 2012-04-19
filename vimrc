@@ -174,6 +174,55 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 set modeline
 set modelines=10
 
+" Move lines or blocks of text using Alt-jkhl
+nnoremap <C-j> :m+<CR>==
+nnoremap <C-k> :m-2<CR>==
+nnoremap <C-h> <<
+nnoremap <C-l> >>
+inoremap <C-j> <Esc>:m+<CR>==gi
+inoremap <C-k> <Esc>:m-2<CR>==gi
+inoremap <C-h> <Esc><<`]a
+inoremap <C-l> <Esc>>>`]a
+vnoremap <C-j> :m'>+<CR>gv=gv
+vnoremap <C-k> :m-2<CR>gv=gv
+vnoremap <C-h> <gv
+vnoremap <C-l> >gv
+
+" * stays on current word match
+" * removes current search
+let g:highlighting = 0
+function! Highlighting()
+  if g:highlighting == 1 && @/ =~ '^\\<'.expand('<cword>').'\\>$'
+    let g:highlighting = 0
+    return ":silent nohlsearch\<CR>"
+  endif
+  let @/ = '\<'.expand('<cword>').'\>'
+  let g:highlighting = 1
+  return ":silent set hlsearch\<CR>"
+endfunction
+nnoremap <silent> <expr> * Highlighting()
+
+" <CR> clears search hilighting
+nnoremap <CR> :noh<CR>
+
+" exit insert mode after 5 seconds of inactivity
+au CursorHoldI * stopinsert
+au InsertEnter * let updaterestore=&updatetime | set updatetime=5000
+au InsertLeave * let &updatetime=updaterestore
+
+" easier to get into command mode
+nnoremap ; :
+
+" " easy escape for non-remapped keyboards (hopefully no kj words)
+inoremap kj <Esc>
+cnoremap kj <Esc>  
+
+" " move up and down wrapped lines rather than actual lines
+noremap j gj
+noremap k gk
+
+set visualbell
+
 " ----------------------------------------------------------------------------
 " }}}
 " {{{ Spacing
