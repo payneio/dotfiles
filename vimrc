@@ -284,7 +284,9 @@ if &term =~ '^\(xterm\|screen\|xterm-color\)$'
 endif
 
 " Show line numbers
-set number
+set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 set ruler
 
 " Highlight search terms
