@@ -37,9 +37,9 @@ Bundle 'Align'                            , {'name': 'align'}
 Bundle 'tpope/vim-bundler'                , {'name': 'bundler'}
 Bundle 'camelcasemotion'                  , {'name': 'camelcasemotion'}
 Bundle 'kchmck/vim-coffee-script'         , {'name': 'coffeescript'}
-Bundle 'wincent/Command-T'                , {'name': 'command-t'}
 Bundle 'Conque-Shell'                     , {'name': 'conque-shell'}
 Bundle 'Color-Scheme-Explorer'            , {'name': 'cs-explorer'}
+Bundle 'kien/ctrlp.vim'                   , {'name': 'ctrlp'}
 Bundle 'tpope/vim-cucumber'               , {'name': 'cucumber'}
 Bundle 'tpope/vim-endwise'                , {'name': 'endwise'}
 Bundle 'tpope/vim-fugitive'               , {'name': 'fugitive'}
@@ -102,7 +102,7 @@ set wildmode=list:longest,list:full
 set suffixes+=,.class,.swp
 
 "Don't tab complete files with these extensions
-set wildignore=*.class,*.swp,*.o,*.pyc,*.obj,.git,*.rbc,*.svn,vender/gems/*
+set wildignore=*.class,*.swp,*.o,*.pyc,*.obj,.git,*.rbc,*.svn,*/tmp/*,tmp\*,*.so,*.zip,*.exe
 
 " Look for tag files in the same directory of the edited file, and all the way
 " up to the root directory (hence the ;)
@@ -546,16 +546,6 @@ let g:tlTokenList = ['\<TODO\>', '\<FIXME\>', '\<QUESTION\>', '\<HACK\>', '\<XXX
 " NERDCommenter: Add a space after the comment symbol
 let NERDSpaceDelims=1
 
-" CommandT configuration
-silent nnoremap <F2> :CommandT<CR>
-
-" ZoomWin configuration
-" Without setting this, ZoomWin restores windows in a way that causes
-" equalalways behavior to be triggered the next time CommandT is used.
-" This is likely a bludgeon to solve some other issue, but it works
-set noequalalways
-map <Leader><Leader> :ZoomWin<CR> 
-
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
@@ -618,7 +608,12 @@ elseif has("unix")
 endif
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
- 
+
+" Ctrlp
+let g:ctrlp_working_path_mode = 0 "don't manage working directory
+let g:ctrlp_max_height = 40
+let g:ctrlp_max_files = 0
+
 " ----------------------------------------------------------------------------
 " }}}
 " {{{ Local configuration
