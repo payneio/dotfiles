@@ -610,7 +610,7 @@ let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 
 " Ctrlp
-let g:ctrlp_working_path_mode = 0 "don't manage working directory
+" let g:ctrlp_working_path_mode = 0 "don't manage working directory
 let g:ctrlp_max_height = 40
 let g:ctrlp_max_files = 0
 
