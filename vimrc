@@ -34,6 +34,7 @@ Bundle 'westcave/snipmate-snippets'
 Bundle 'tpope/vim-abolish'                , {'name': 'abolish'}
 Bundle 'mileszs/ack.vim'                  , {'name': 'ack'}
 Bundle 'Align'                            , {'name': 'align'}
+Bundle 'vim-scripts/Arduino-syntax-file'  , {'name': 'arduino-syntax-file'}
 Bundle 'tpope/vim-bundler'                , {'name': 'bundler'}
 Bundle 'camelcasemotion'                  , {'name': 'camelcasemotion'}
 Bundle 'kchmck/vim-coffee-script'         , {'name': 'coffeescript'}
@@ -72,7 +73,6 @@ Bundle 'davidoc/todo.txt-vim'             , {'name': 'todo-txt'}
 Bundle 'tpope/vim-unimpaired'             , {'name': 'unimpaired'}
 Bundle 'tpope/vim-vividchalk.git'         , {'name': 'vividchalk'}
 Bundle 'vim-scripts/ZoomWin'              , {'name': 'zoomwin'}
-
 " Load additional local bundles. The local/bundles.vim file, if it exists,
 " contains Bundle specs that make sense only in the current machine. That file
 " is not tracked. See also the *Local configurations* section below.
@@ -135,6 +135,9 @@ function s:setupMarkup()
   set wrap
   map <buffer> <Leader>p :Hammer<CR>
 endfunction
+
+" Arduino
+autocmd! BufNewFile,BufRead *.{pde,ino} setlocal ft=arduino
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
