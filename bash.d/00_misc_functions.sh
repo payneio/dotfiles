@@ -1,11 +1,4 @@
 #!/bin/bash
-#############################################################################
-#
-# FILE:         020_misc_functions.sh
-#
-# DESCRIPTION:  
-#
-#############################################################################
 
 show_parent_dirs()
 {
@@ -36,8 +29,4 @@ function_exists()
 
    return $?
 }
-
-
-
-# vim: ft=bash fdm=marker expandtab ts=3 sw=3 :
 

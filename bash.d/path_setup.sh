@@ -1,20 +1,30 @@
 #!/bin/bash
-#############################################################################
-#
-# FILE:         030_env_functions.sh
-#
-# DESCRIPTION:  
-#
-#############################################################################
 
 
+# Directories
+export DDOC=$HOME/Documents
+export DMEDIA=$HOME/media
+export DBACKUP=$HOME/backup
+export DDOWN=$HOME/Downloads
+export DOTHER=$HOME/other
+export DADMIN=$DOTHER/admin
+export DSYSDATA=$DADMIN/data
+export DDROPBOX=$HOME/Dropbox
+export DBASH=$HOME/.bash.d
+export DDESKTOP=$DOTHER/Desktop
+export DAPTCACHE=/var/cache/apt/archives
+export DPROJECTS=$HOME/projects
 
+# Files
+export FSYSLOG=/var/log/syslog
+export FILOG=$DSYSDATA/install.log
 
+# Path functions {{{
 ##############################################################################
 #
 # FUNCTION:     addtopath
 #
-# DESCRIPTION:  Add a directory to the $PATH enviroment variable.
+# DESCRIPTION:  Add a directory to the $PATH environment variable.
 #               - Checks that the directory exists.
 #               - Directories can be inserted at the beginning or the end of
 #                 the $PATH.
@@ -58,7 +68,6 @@ addtopath()
 
 ##############################################################################
 
-
 ##############################################################################
 # Convenience wrappers for addtopath
 #
@@ -66,9 +75,6 @@ pathappend()  { addtopath $1 end; return $?; }
 pathprepend() { addtopath $1 beg; return $?; }
 #
 ##############################################################################
-
-
-
 
 ##############################################################################
 #
@@ -89,8 +95,15 @@ delfrompath()
     export PATH=`echo $PATH | myrmlistitems "$a_directory" ':'`
 }
 ##############################################################################
+# }}}
 
+# Add my admin scripts to the path
+pathprepend "$DADMIN/scripts"
+pathprepend "$DOTHER/run/bin"
 
+# Add user's Cabal binaries to the path
+pathprepend "$HOME/.cabal/bin/"
 
-# vim: ft=bash fdm=marker expandtab ts=3 sw=3 :
+pathprepend "$DDROPBOX/todo"
+
 

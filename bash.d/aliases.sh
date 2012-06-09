@@ -1,12 +1,4 @@
 #!/bin/bash
-#############################################################################
-#
-# FILE:         040_misc_aliases.sh
-#
-# DESCRIPTION:  
-#
-#############################################################################
-
 
 alias vish='vim $DBASH'
 alias gvish='gvim $DBASH'
@@ -34,5 +26,5 @@ alias dumd='du --max-depth'
 
 alias clearcache='sudo sync; sudo echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null'
 
-# vim: ft=bash fdm=marker expandtab ts=3 sw=3 :
+alias mc='mv' 
 
