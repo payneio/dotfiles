@@ -15,6 +15,8 @@ export DDESKTOP=$DOTHER/Desktop
 export DAPTCACHE=/var/cache/apt/archives
 export DPROJECTS=$HOME/projects
 
+CDP_DIRS=($DPROJECTS) # for cdp
+
 # Files
 export FSYSLOG=/var/log/syslog
 export FILOG=$DSYSDATA/install.log

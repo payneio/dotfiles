@@ -27,4 +27,4 @@ alias dumd='du --max-depth'
 alias clearcache='sudo sync; sudo echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null'
 
 alias mc='mv' 
-
+alias cdp='. cdp.sh'
