@@ -612,6 +612,9 @@ let g:gist_open_browser_after_post = 1
 let g:ctrlp_max_height = 40
 let g:ctrlp_max_files = 0
 
+" ZoomWin
+map <Leader><Leader> :ZoomWin<CR>
+
 " ----------------------------------------------------------------------------
 " }}}
 " {{{ Local configuration
