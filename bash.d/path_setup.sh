@@ -102,6 +102,7 @@ delfrompath()
 # Add my admin scripts to the path
 pathprepend "$DADMIN/scripts"
 pathprepend "$DOTHER/run/bin"
+pathprepend "$HOME/.bin"
 
 # Add user's Cabal binaries to the path
 pathprepend "$HOME/.cabal/bin/"
