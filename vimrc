@@ -9,7 +9,7 @@ elseif has("unix")
   if os == "Mac" || os == "Darwin"
     let os = "osx"
   else
-    os = "unix"
+    let os = "unix"
   end  
 else
   let os="?"
