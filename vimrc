@@ -1,9 +1,23 @@
 set nocompatible
 " {{{ Multiplatform compatibility
 
+" win, osx, or unix?
 if has('win32') || has('win64')
-    " Make windows use ~/.vim too, I don't want to use _vimfiles
-    set runtimepath^=~/.vim
+  let os="win"
+elseif has("unix")
+  let os=substitute(system('uname'), '\n', '', '')
+  if os == "Mac" || os == "Darwin"
+    let os = "osx"
+  else
+    os = "unix"
+  end  
+else
+  let os="?"
+end
+
+if os == "win"
+  " Make windows use ~/.vim too, I don't want to use _vimfiles
+  set runtimepath^=~/.vim
 endif
 
 " }}}
@@ -71,6 +85,7 @@ Bundle 'vim-scripts/searchfold.vim'       , {'name': 'searchfold'}
 Bundle 'timcharper/textile.vim'           , {'name': 'textile'}
 Bundle 'davidoc/todo.txt-vim'             , {'name': 'todo-txt'}
 Bundle 'tpope/vim-unimpaired'             , {'name': 'unimpaired'}
+Bundle 'jpalardy/vim-slime'               , {'name': 'vim-slime'}
 Bundle 'tpope/vim-vividchalk.git'         , {'name': 'vividchalk'}
 Bundle 'vim-scripts/ZoomWin'              , {'name': 'zoomwin'}
 " Load additional local bundles. The local/bundles.vim file, if it exists,
@@ -262,7 +277,7 @@ set listchars=tab:»»,trail:·
 
 syntax enable
 set background=dark
-colorscheme solarized
+silent! colorscheme solarized
 if has('win32') || has('win64')
   set guifont=Lucida\ Console:h12
 elseif has('macunix')
@@ -518,7 +533,6 @@ endif
 " {{{ Abbreviations
 " ----------------------------------------------------------------------------
 iab ddate <C-R>=strftime("%Y-%m-%d")<CR>
-iab empw paul@westcave.com
 
 " {{{ Usual spelling mistakes
 " ---------------------------
@@ -599,13 +613,26 @@ let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
 
 " gist-vim defaults
-if has("mac")
+if os == "osx"
   let g:gist_clip_command = 'pbcopy'
-elseif has("unix")
+elseif os == "unix" 
   let g:gist_clip_command = 'xclip -selection clipboard'
 endif
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
+
+" clipboard compatibility
+if has("clipboard")
+  set clipboard=unnamed
+else
+  if os == "osx"
+    vmap <C-x> :!pbcopy<CR>
+    vmap <C-c> :w !pbcopy<CR><CR>
+  elseif os == "unix"
+    vmap <C-x> :!xclip -selection clipboard<CR>
+    vmap <C-c> :w !xclip -selection clipboard<CR><CR>
+  endif
+end
 
 " Ctrlp
 " let g:ctrlp_working_path_mode = 0 "don't manage working directory
@@ -614,6 +641,9 @@ let g:ctrlp_max_files = 0
 
 " ZoomWin
 map <Leader><Leader> :ZoomWin<CR>
+
+" Slime
+let g:slime_target = "tmux"
 
 " ----------------------------------------------------------------------------
 " }}}
