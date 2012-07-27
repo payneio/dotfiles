@@ -71,6 +71,7 @@ Bundle 'ajf/puppet-vim'                   , {'name': 'puppet'}
 Bundle 'pylint.vim'                       , {'name': 'pylint'}
 Bundle 'python.vim--Vasiliev'             , {'name': 'python-syntax'}
 Bundle 'tpope/vim-rails'                  , {'name': 'rails'}
+Bundle 'vim-scripts/Rainbow-Parenthesis'  , {'name': 'rainbow-parenthesis'}
 Bundle 'tpope/vim-repeat'                 , {'name': 'repeat'}
 Bundle 'taq/vim-rspec'                    , {'name': 'rspec'}
 Bundle 'ShowMarks'                        , {'name': 'showmarks'}
@@ -104,6 +105,9 @@ au!
 
 " Set encoding
 set encoding=utf-8
+
+" Autosave
+autocmd BufLeave,FocusLost * silent! wall
 
 " Shows autocomplete menu for commands
 set wildmenu
@@ -219,14 +223,16 @@ nnoremap <silent> <expr> * Highlighting()
 nnoremap <CR> :noh<CR>
 
 " exit insert mode after 5 seconds of inactivity
-au CursorHoldI * stopinsert
-au InsertEnter * let updaterestore=&updatetime | set updatetime=5000
-au InsertLeave * let &updatetime=updaterestore
+" au CursorHoldI * stopinsert
+" au InsertEnter * let updaterestore=&updatetime | set updatetime=5000
+" au InsertLeave * let &updatetime=updaterestore
 
 " easier to get into command mode
 nnoremap ; :
 
 " " easy escape for non-remapped keyboards (hopefully no kj words)
+inoremap jj <Esc>
+cnoremap jj <Esc>  
 inoremap kj <Esc>
 cnoremap kj <Esc>  
 
@@ -399,10 +405,10 @@ nmap <F6> :bot split ~/.vimrc<CR>G?LAST_SPELL<CR>zRkoiab<Space>
 nmap <C-F6> :let tmp=@f<CR>"fyaw<Esc>:bot split ~/.vimrc<CR>G?LAST_SPELL<CR>zRkoiab<Space><Esc>"fp<Esc>:let @f=tmp<CR>a<Space>
 
 " Split jumping
-map <right> :wincmd l<CR>
-map <left> :wincmd h<CR>
-map <up> :wincmd k<CR>
-map <down> :wincmd j<CR>
+" map <right> :wincmd l<CR>
+" map <left> :wincmd h<CR>
+" map <up> :wincmd k<CR>
+" map <down> :wincmd j<CR>
 
 " Make shift insert work in the gui as it does in the shell.
 if has('gui_running')
@@ -635,9 +641,12 @@ else
 end
 
 " Ctrlp
-" let g:ctrlp_working_path_mode = 0 "don't manage working directory
+let g:ctrlp_map = '<leader>t'
 let g:ctrlp_max_height = 40
 let g:ctrlp_max_files = 0
+map <leader>f :CtrlP<CR>
+map <leader>b :CtrlPBuffer<cr>
+map <leader>m :CtrlPMRU<cr>
 
 " ZoomWin
 map <Leader><Leader> :ZoomWin<CR>
