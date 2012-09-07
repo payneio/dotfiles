@@ -106,7 +106,8 @@ au!
 " Set encoding
 set encoding=utf-8
 
-" Autosave
+"Save on losing focus (autosave)
+"au FocusLost * :wa
 autocmd BufLeave,FocusLost * silent! wall
 
 " Shows autocomplete menu for commands
@@ -368,7 +369,7 @@ set directory=~/.vim/backup
 " {{{ Key mapping
 " ----------------------------------------------------------------------------
 
-" Set , as the map leader (The default \ is hard to type in Spanish keyboards)
+" Set , as the map Leader (The default \ is hard to type in Spanish keyboards)
 let mapleader = ","
 
 " F5 toggles the TagList window (plugin needed)
@@ -377,8 +378,8 @@ silent nnoremap <F5> :TlistToggle<CR>
 " F2 toggles paste mode (turns off auto-indent while pasting from buffer)
 set pastetoggle=<F2>
 
-" Shift+Tab shows the list of jumps in the tag stack.
-nmap  <C-Tab>  :tags<CR>
+"New vertical split
+nmap <Leader>w :vnew<CR>
 
 " Open the definition in a new tab
 nmap <A-/> :tab split<CR>:exec("tjump ".expand("<cword>"))<CR>
@@ -390,12 +391,9 @@ nmap <A-]> :vsp <CR>:exec("tjump ".expand("<cword>"))<CR>
 " one match.
 noremap <C-]> g<C-]>
 
-" Create Blank Newlines and stay in Normal mode
-nnoremap <silent> on o<Esc>
-nnoremap <silent> On O<Esc>
-
 " Use space to toggle folds
 nnoremap <space> za
+
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
@@ -409,26 +407,11 @@ nmap <Leader>rc :bot split ~/.vimrc<CR>
 nmap <F6> :bot split ~/.vimrc<CR>G?LAST_SPELL<CR>zRkoiab<Space>
 nmap <C-F6> :let tmp=@f<CR>"fyaw<Esc>:bot split ~/.vimrc<CR>G?LAST_SPELL<CR>zRkoiab<Space><Esc>"fp<Esc>:let @f=tmp<CR>a<Space>
 
-" Split jumping
-" map <right> :wincmd l<CR>
-" map <left> :wincmd h<CR>
-" map <up> :wincmd k<CR>
-" map <down> :wincmd j<CR>
-
 " Make shift insert work in the gui as it does in the shell.
 if has('gui_running')
     silent noremap! <S-Insert> <MiddleMouse>
 endif
 
-" Diff operations made shorter (Great for merges)
-if &diff
-    nnoremap <Leader>du  :diffupdate<cr>
-    nnoremap <Leader>dg  :diffget<cr>
-    nnoremap <Leader>dp  :diffput<cr>
-    nnoremap <Leader>dg1 :diffget 1<cr>
-    nnoremap <Leader>dg2 :diffget 2<cr>
-    nnoremap <Leader>dg3 :diffget 3<cr>
-endif
 
 " ----------------------------------------------------------------------------
 " }}}
@@ -646,12 +629,12 @@ else
 end
 
 " Ctrlp
-let g:ctrlp_map = '<leader>t'
+let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_max_height = 40
 let g:ctrlp_max_files = 0
-map <leader>f :CtrlP<CR>
-map <leader>b :CtrlPBuffer<cr>
-map <leader>m :CtrlPMRU<cr>
+map <Leader>f :CtrlP<CR>
+map <Leader>b :CtrlPBuffer<cr>
+map <Leader>m :CtrlPMRU<cr>
 
 " ZoomWin
 map <Leader><Leader> :ZoomWin<CR>
@@ -742,17 +725,6 @@ if v:progname != "vine" && v:progname != "gvine"
   "
   " ----------------------------------------------------------------------------
   " }}}
-
-  " Create specific settings depending on the calling program name
-  if v:progname == "vimm"
-      color morning
-  endif
-
-  " TODO: This should only be set for rst or text files
-  nmap <Leader>ti yyPVr=yyjpo<CR>
-  nmap <Leader>h1 yypVr=o<CR>
-  nmap <Leader>h2 yyrVr-o<CR>
-  nmap <Leader>h3 yypVr~o<CR>
 
   "TODO: This should probably be set somewhere else.
   augroup experiment
