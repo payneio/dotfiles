@@ -372,9 +372,10 @@ set directory=~/.vim/backup
 let mapleader = ","
 
 " F5 toggles the TagList window (plugin needed)
-" N.B.: Although I'd prefer to use C-F3 for this, this key cobination doesn't
-"       work when vim is run in gnome-terminal.
 silent nnoremap <F5> :TlistToggle<CR>
+
+" F2 toggles paste mode (turns off auto-indent while pasting from buffer)
+set pastetoggle=<F2>
 
 " Shift+Tab shows the list of jumps in the tag stack.
 nmap  <C-Tab>  :tags<CR>
