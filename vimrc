@@ -308,6 +308,10 @@ autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 set ruler
 
+" Toggle cursorline to help distinguish insert mode
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+
 " Highlight search terms
 set hlsearch
 
