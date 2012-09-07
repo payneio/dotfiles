@@ -1,3 +1,8 @@
+" This .vimrc requires vundle to manage extension packages.
+" The .dotfiles install installs vundle.
+" If you want to use this .vimrc without the .dotfiles, you will need:
+" # git clone git://github.com/gmarik/vundle.git .vim/bundle/vundle
+
 set nocompatible
 " {{{ Multiplatform compatibility
 
