@@ -1,0 +1,1 @@
+pathprepend "/Applications/Postgres.app/Contents/MacOS/bin"

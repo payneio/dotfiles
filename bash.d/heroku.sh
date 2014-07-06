@@ -1,0 +1,1 @@
+pathappend "/usr/local/heroku/bin"
