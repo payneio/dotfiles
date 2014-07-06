@@ -26,3 +26,7 @@ alias clearcache='sudo sync; sudo echo 3 | sudo tee /proc/sys/vm/drop_caches > /
 
 alias mc='mv' 
 alias cdp='. cdp.sh'
+
+# ruby aliases
+alias befr='bundle exec foreman run'
+
