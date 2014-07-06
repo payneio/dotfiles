@@ -118,7 +118,7 @@ autocmd FileType ruby map <F8> :!ruby "%:p"<CR>
 
 "Save on losing focus (autosave)
 "au FocusLost * :wa
-autocmd BufLeave,FocusLost * silent! wall
+" autocmd BufLeave,FocusLost * silent! wall
 
 " Shows autocomplete menu for commands
 set wildmenu
