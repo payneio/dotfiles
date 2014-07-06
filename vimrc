@@ -111,6 +111,10 @@ au!
 " Set encoding
 set encoding=utf-8
 
+autocmd FileType c map <F8> :!gcc --o "%:p:r.out" "%:p" && "%:p:r.out"<CR>
+autocmd FileType java map <F8> :!javac "%:p" && java -cp "%:p:h" "%:t:r"<CR>
+autocmd FileType ruby map <F8> :!ruby "%:p"<CR>
+
 "Save on losing focus (autosave)
 "au FocusLost * :wa
 autocmd BufLeave,FocusLost * silent! wall
