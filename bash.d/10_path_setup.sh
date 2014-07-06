@@ -1,15 +1,11 @@
 #!/bin/bash
 
-
 # Directories
 export DDOC=$HOME/Documents
 export DMEDIA=$HOME/media
 export DBACKUP=$HOME/backup
 export DDOWN=$HOME/Downloads
-export DOTHER=$HOME/other
-export DADMIN=$DOTHER/admin
 export DSYSDATA=$DADMIN/data
-export DDROPBOX=$HOME/Dropbox
 export DBASH=$HOME/.bash.d
 export DDESKTOP=$DOTHER/Desktop
 export DAPTCACHE=/var/cache/apt/archives
@@ -97,14 +93,5 @@ delfrompath()
 ##############################################################################
 # }}}
 
-# Add my admin scripts to the path
-pathprepend "$DADMIN/scripts"
-pathprepend "$DOTHER/run/bin"
 pathprepend "$HOME/.bin"
-
-# Add user's Cabal binaries to the path
-pathprepend "$HOME/.cabal/bin/"
-
-pathprepend "$DDROPBOX/todo"
-
 
