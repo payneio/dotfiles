@@ -64,6 +64,7 @@ Bundle 'tpope/vim-cucumber'               , {'name': 'cucumber'}
 Bundle 'tpope/vim-endwise'                , {'name': 'endwise'}
 Bundle 'tpope/vim-fugitive'               , {'name': 'fugitive'}
 Bundle 'tpope/vim-git'                    , {'name': 'git'}
+Bundle 'airblade/vim-gitgutter'           , {'name': 'gitgutter'}
 Bundle 'tpope/vim-haml'                   , {'name': 'haml'}
 Bundle 'michaeljsmith/vim-indent-object'  , {'name': 'indent_object'}
 Bundle 'wgibbs/vim-irblack'               , {'name': 'irblack'}
