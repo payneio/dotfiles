@@ -48,7 +48,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tomtom/tlib_vim'              , {'name': 'tlib'}
 Bundle 'MarcWeber/vim-addon-mw-utils' , {'name': 'markweber-utils'}
 Bundle 'garbas/vim-snipmate'          , {'name': 'snipmate'}
-Bundle 'westcave/snipmate-snippets'
+Bundle 'payneio/snipmate-snippets'
 
 Bundle 'tpope/vim-abolish'                , {'name': 'abolish'}
 Bundle 'mileszs/ack.vim'                  , {'name': 'ack'}
