@@ -86,7 +86,7 @@ Bundle 'altercation/vim-colors-solarized' , {'name': 'solarized'}
 Bundle 'jdevera/vim-stl-syntax'           , {'name': 'stl-syntax'}
 Bundle 'ervandew/supertab'                , {'name': 'supertab'}
 Bundle 'tpope/vim-surround'               , {'name': 'surround'}
-Bundle 'scrooloose/syntastic'             , {'name': 'syntastic'}
+" Bundle 'scrooloose/syntastic'             , {'name': 'syntastic'}
 Bundle 'majutsushi/tagbar'                , {'name': 'tagbar'}
 Bundle 'vim-scripts/taglist.vim'          , {'name': 'taglist'}
 Bundle 'vim-scripts/searchfold.vim'       , {'name': 'searchfold'}
