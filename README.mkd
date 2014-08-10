@@ -11,6 +11,10 @@ I don't recommend a fork.
     cd ~/.dotfiles
     bash install
 
+## A few more things to do on initial install
+
+  On an ubuntu box, set up solarized color theme using:
+  ./ubuntu_post_install
 
 ## Contents
 
