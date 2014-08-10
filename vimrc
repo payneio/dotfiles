@@ -71,6 +71,7 @@ Bundle 'wgibbs/vim-irblack'               , {'name': 'irblack'}
 Bundle 'pangloss/vim-javascript'          , {'name': 'javascript'}
 Bundle 'hallison/vim-markdown'            , {'name': 'markdown'}
 Bundle 'matchit.zip'                      , {'name': 'matchit'}
+Bundle 'xolox/vim-misc'                   , {'name': 'vim-misc'}
 Bundle 'scrooloose/nerdcommenter'         , {'name': 'nerdcommenter'}
 Bundle 'xolox/vim-notes'                  , {'name': 'notes'}
 Bundle 'ajf/puppet-vim'                   , {'name': 'puppet'}
@@ -79,8 +80,8 @@ Bundle 'python.vim--Vasiliev'             , {'name': 'python-syntax'}
 Bundle 'tpope/vim-rails'                  , {'name': 'rails'}
 Bundle 'vim-scripts/Rainbow-Parenthesis'  , {'name': 'rainbow-parenthesis'}
 Bundle 'tpope/vim-repeat'                 , {'name': 'repeat'}
-Bundle 'taq/vim-rspec'                    , {'name': 'rspec'}
-Bundle 'ShowMarks'                        , {'name': 'showmarks'}
+Bundle 'skwp/vim-rspec'                   , {'name': 'rspec'}
+Bundle 'vim-scripts/ShowMarks'            , {'name': 'showmarks'}
 Bundle 'altercation/vim-colors-solarized' , {'name': 'solarized'}
 Bundle 'jdevera/vim-stl-syntax'           , {'name': 'stl-syntax'}
 Bundle 'ervandew/supertab'                , {'name': 'supertab'}
