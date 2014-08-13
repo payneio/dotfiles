@@ -1,12 +1,10 @@
 #!/bin/bash
 
-## from www.webupd8.org/2011/04/solarized-must-have-color-paletter-for.html
+## Similar to www.webupd8.org/2011/04/solarized-must-have-color-paletter-for.html
+
+cd ~
 
 # set up ls colors
-cd ~
-wget --no-check-certificate https://raw.github.com/seebi/dircolors-solarized/master/dircolors.ansi-dark
-mv dircolors.ansi-dark .dircolors
-eval `dircolors ~/.dircolors`
 
 git clone https://github.com/payneio/ls-colors-solarized/
 wget https://raw.githubusercontent.com/payneio/dircolors-solarized/master/dircolors.ansi-dark
@@ -14,6 +12,7 @@ mv dircolors.ansi-dark .dircolors
 eval `dircolors ~/.dircolors`
 
 # grab solarized install scripts
+
 git clone https://github.com/payneio/gnome-terminal-colors-solarized.git
 cd gnome-terminal-colors-solarized
 ./set_dark.sh
