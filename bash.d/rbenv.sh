@@ -1,5 +1,7 @@
-pathprepend "$HOME/.rbenv/bin"
-if [[ "$(type -P rbenv)" && ! "$(type -t _rbenv)" ]]; then
+#!/bin/bash
+
+if hash rbenv 2>/dev/null; then
+  pathprepend "$HOME/.rbenv/bin"
   eval "$(rbenv init -)"
+  echo "rbenv ready."
 fi
-# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
