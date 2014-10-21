@@ -8,3 +8,5 @@ bash.d/local/after/*
 !bash.d/local/after/.empty
 *.swp
 *.DS_Store
+vars/*
+!vars/README.md
