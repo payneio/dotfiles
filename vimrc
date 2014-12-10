@@ -93,6 +93,7 @@ Bundle 'vim-scripts/searchfold.vim'       , {'name': 'searchfold'}
 Bundle 'timcharper/textile.vim'           , {'name': 'textile'}
 Bundle 'davidoc/todo.txt-vim'             , {'name': 'todo-txt'}
 Bundle 'tpope/vim-unimpaired'             , {'name': 'unimpaired'}
+Bundle 'fatih/vim-go'                     , {'name': 'vim-go'}
 Bundle 'jpalardy/vim-slime'               , {'name': 'vim-slime'}
 Bundle 'tpope/vim-vividchalk.git'         , {'name': 'vividchalk'}
 Bundle 'vim-scripts/ZoomWin'              , {'name': 'zoomwin'}
