@@ -384,6 +384,9 @@ set directory=~/.vim/backup
 " Set , as the map Leader (The default \ is hard to type in Spanish keyboards)
 let mapleader = ","
 
+" Esc twice to save
+map <ESC><ESC> :w<CR>
+
 " F5 toggles the TagList window (plugin needed)
 silent nnoremap <F5> :TlistToggle<CR>
 
