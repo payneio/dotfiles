@@ -427,7 +427,6 @@ if has('gui_running')
     silent noremap! <S-Insert> <MiddleMouse>
 endif
 
-
 " ----------------------------------------------------------------------------
 " }}}
 " {{{ Cscope
@@ -560,6 +559,14 @@ iab Whould      Should
 " {{{ Plugin configuration
 " ----------------------------------------------------------------------------
 
+" go-vim
+au FileType go nmap <Leader>gdv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gdb <Plug>(go-doc-browser)
+
+au FileType go nmap <Leader>gor <Plug>(go-run)
+au FileType go nmap <Leader>gob <Plug>(go-build)
+au FileType go nmap <Leader>got <Plug>(go-test)
+au FileType go nmap <Leader>goc <Plug>(go-coverage)
 
 " Tasklist: List of markers for tasks
 let g:tlTokenList = ['\<TODO\>', '\<FIXME\>', '\<QUESTION\>', '\<HACK\>', '\<XXXJDV\>']
