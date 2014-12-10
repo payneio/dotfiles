@@ -49,7 +49,6 @@ Bundle 'tomtom/tlib_vim'              , {'name': 'tlib'}
 Bundle 'MarcWeber/vim-addon-mw-utils' , {'name': 'markweber-utils'}
 Bundle 'garbas/vim-snipmate'          , {'name': 'snipmate'}
 Bundle 'payneio/snipmate-snippets'
-
 Bundle 'tpope/vim-abolish'                , {'name': 'abolish'}
 Bundle 'mileszs/ack.vim'                  , {'name': 'ack'}
 Bundle 'Align'                            , {'name': 'align'}
@@ -89,6 +88,7 @@ Bundle 'tpope/vim-surround'               , {'name': 'surround'}
 " Bundle 'scrooloose/syntastic'             , {'name': 'syntastic'}
 Bundle 'majutsushi/tagbar'                , {'name': 'tagbar'}
 Bundle 'vim-scripts/taglist.vim'          , {'name': 'taglist'}
+Bundle 'repos-scala/scala-vundle'         , {'name': 'scala'}
 Bundle 'vim-scripts/searchfold.vim'       , {'name': 'searchfold'}
 Bundle 'timcharper/textile.vim'           , {'name': 'textile'}
 Bundle 'davidoc/todo.txt-vim'             , {'name': 'todo-txt'}
