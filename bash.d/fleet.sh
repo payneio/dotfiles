@@ -7,5 +7,5 @@ if hash fleetctl 2>/dev/null && [ -f $ip_file ]; then
   alias fcj='fleetctl journal'
   alias fclm='fleetctl list-machines'
   alias fclu='fleetctl list-units'
-  echo "fleetctl ready."
+  echo "fleetctl ready. Tunneling $FLEETCTL_TUNNEL."
 fi

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+ip_file="$HOME/.vars/fleetctl_tunnel_ip"
+if hash fleetctl 2>/dev/null; then
+  if [ "$#" -eq 1 ]; then
+    echo $1 > $ip_file
+  fi
+  if [ -f $ip_file ]; then
+    export FLEETCTL_TUNNEL=$(< $ip_file)
+    echo "fleetctl ready. Tunneling $FLEETCTL_TUNNEL."
+  fi
+fi
