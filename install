@@ -21,7 +21,7 @@ get_vim_bundles()
 install_home()
 {
     local dest_dir="$HOME"
-    local excluded=(`basename $0` README.mkd LICENSE TODO.mkd)
+    local excluded=(`basename $0` README.mkd LICENSE TODO.mkd installers)
     replace_all=false
 
     local file
