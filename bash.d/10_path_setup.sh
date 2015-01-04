@@ -94,4 +94,5 @@ delfrompath()
 # }}}
 
 pathprepend "$HOME/.bin"
+pathprepend "$HOME/bin"
 
