@@ -6,6 +6,12 @@ if [ -d $java_dir ]; then
   echo "JAVA_HOME=$java_dir"
 fi
 
+java_dir="/usr/lib/jvm/java-7-openjdk-amd64/"
+if [ -d $java_dir ]; then
+  export JAVA_HOME=$java_dir
+  echo "JAVA_HOME=$java_dir"
+fi
+
 groovy_dir="/usr/local/opt/groovy/libexec"
 if [ -d $groovy_dir ]; then
   export GROOVY_HOME=$groovy_dir
