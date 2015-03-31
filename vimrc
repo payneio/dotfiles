@@ -95,6 +95,7 @@ Bundle 'davidoc/todo.txt-vim'             , {'name': 'todo-txt'}
 Bundle 'tpope/vim-unimpaired'             , {'name': 'unimpaired'}
 Bundle 'fatih/vim-go'                     , {'name': 'vim-go'}
 Bundle 'jpalardy/vim-slime'               , {'name': 'vim-slime'}
+Bundle 'vim-scripts/vimwiki.git'          , {'name': 'vimwiki'}
 Bundle 'tpope/vim-vividchalk.git'         , {'name': 'vividchalk'}
 Bundle 'vim-scripts/ZoomWin'              , {'name': 'zoomwin'}
 " Load additional local bundles. The local/bundles.vim file, if it exists,
@@ -559,14 +560,22 @@ iab Whould      Should
 " {{{ Plugin configuration
 " ----------------------------------------------------------------------------
 
-" go-vim
-au FileType go nmap <Leader>gdv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gdb <Plug>(go-doc-browser)
+" vimwiki
+let g:vimwiki_list = [{'path': '~/repos/wiki/content/', 'path_html': '~/repos/wiki/html/'}]
 
-au FileType go nmap <Leader>gor <Plug>(go-run)
-au FileType go nmap <Leader>gob <Plug>(go-build)
-au FileType go nmap <Leader>got <Plug>(go-test)
-au FileType go nmap <Leader>goc <Plug>(go-coverage)
+" go-vim
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+
+au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <Leader>b <Plug>(go-build)
+au FileType go nmap <Leader>t <Plug>(go-test)
+au FileType go nmap <Leader>c <Plug>(go-coverage)
+
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>e <Plug>(go-rename)
 
 " Tasklist: List of markers for tasks
 let g:tlTokenList = ['\<TODO\>', '\<FIXME\>', '\<QUESTION\>', '\<HACK\>', '\<XXXJDV\>']
