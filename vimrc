@@ -291,6 +291,7 @@ set backspace=indent,eol,start
 " Ctrl-K >> for » and Ctrl-K .M for ·  (use :dig for list of digraphs)
 set listchars=tab:»»,trail:·
 
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 " ----------------------------------------------------------------------------
 " }}}
 " {{{ Appearance
