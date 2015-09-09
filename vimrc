@@ -53,6 +53,7 @@ Bundle 'tpope/vim-abolish'                , {'name': 'abolish'}
 Bundle 'mileszs/ack.vim'                  , {'name': 'ack'}
 Bundle 'Align'                            , {'name': 'align'}
 Bundle 'vim-scripts/Arduino-syntax-file'  , {'name': 'arduino-syntax-file'}
+Bundle 'ntpeters/vim-better-whitespace'   , {'name': 'vim-better-whitespace'}
 Bundle 'tpope/vim-bundler'                , {'name': 'bundler'}
 Bundle 'camelcasemotion'                  , {'name': 'camelcasemotion'}
 Bundle 'kchmck/vim-coffee-script'         , {'name': 'coffeescript'}
@@ -290,6 +291,7 @@ set backspace=indent,eol,start
 " Ctrl-K >> for » and Ctrl-K .M for ·  (use :dig for list of digraphs)
 set listchars=tab:»»,trail:·
 
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 " ----------------------------------------------------------------------------
 " }}}
 " {{{ Appearance
