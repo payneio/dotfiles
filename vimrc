@@ -263,12 +263,12 @@ set visualbell
 " ----------------------------------------------------------------------------
 
 " Number of spaces that a <Tab> in the file counts for.
-set tabstop=2
+set tabstop=4
 
 " Number of spaces to use for each step of (auto)indent
-set shiftwidth=2
+set shiftwidth=4
 
-set softtabstop=2
+set softtabstop=4
 
 " A <Tab> in front of a line inserts blanks according to shiftwidth
 " A <BS> deletes shiftwidth spaces at the start of the line
