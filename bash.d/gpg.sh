@@ -10,7 +10,7 @@ case $OSTYPE in
         GPG_AGENT_INFO=`cat $HOME/.gpg-agent-info`
         export GPG_AGENT_INFO
     else
-      eval `gpg-agent --daemon`
+      eval `gpg-agent --daemon > /dev/null 2>&1`
     fi
     export GPG_TTY=tty
     echo "gpg ready."
