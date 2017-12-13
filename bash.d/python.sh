@@ -7,6 +7,7 @@ fi
 conda="$HOME/miniconda3"
 if [ -d $conda ]; then
   pathprepend "$HOME/miniconda3/bin"
+  source activate default
   echo "python conda ready."
 fi
 
