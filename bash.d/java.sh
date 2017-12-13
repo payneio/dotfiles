@@ -22,3 +22,6 @@ if [ -d $groovy_dir ]; then
   export GROOVY_HOME=$groovy_dir
   echo "GROOVY_HOME=$groovy_dir"
 fi
+
+echo "java ready."
+
