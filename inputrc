@@ -1,0 +1,4 @@
+# use up and down arrow to match search history based on typed starting text
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
