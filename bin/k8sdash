@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if hash kubectl 2>/dev/null; then
+    kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
+    kubectl proxy
+else
+    echo "Requires kubectl, an existing cluster, and kubernetes-dashboard installed"
+fi
