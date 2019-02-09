@@ -2,6 +2,7 @@
 
 if hash kubectl 2>/dev/null; then
     kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
+    echo "http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/"
     kubectl proxy
 else
     echo "Requires kubectl, an existing cluster, and kubernetes-dashboard installed"
