@@ -95,4 +95,5 @@ delfrompath()
 
 pathprepend "$HOME/.bin"
 pathprepend "$HOME/bin"
+pathappend "$HOME/.local/bin"
 
