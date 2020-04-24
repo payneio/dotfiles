@@ -52,28 +52,6 @@ cat <<EOF
 [core]
     excludesfile = ~/.gitignore-global
     whitespace=trailing-space,cr-at-eol,space-before-tab,tab-in-indent
-[color]
-    ui = auto
-    diff = auto
-    status = auto
-    branch = auto
-    interactive = auto
-    current = yellow reverse
-    local = yellow
-    remote = green
-    interactive = auto
-    current = yellow reverse
-    local = yellow
-    remote = green
-[color "diff"]
-    whitespace = red reverse
-    frag = cyan
-    old = red bold
-    new = green bold
-[color "status"]
-    added = green
-    changed = yellow
-    untracked = red
 [apply]
     whitespace = nowarn
 [push]
