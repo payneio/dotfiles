@@ -13,8 +13,8 @@ fi
 #   $debian_chroot  Current chroot (if any)
 #   `__git_ps1`     Current git branch if any
 #
-PS1NOCOLOR='\[\033[0m\]${debian_chroot:+($debian_chroot)}\u@\h:\w`__git_ps1`\$ '
-PS1NOCOLOR='\u@\h:\w`__git_ps1`\$ '
+PS1NOCOLOR='\[\033[0m\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+PS1NOCOLOR='\u@\h:\w\$ '
 PS1="\[\033[0m\]$PS1NOCOLOR"
 
 # # If this is an xterm set the title to user@host:dir
