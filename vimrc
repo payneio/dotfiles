@@ -45,14 +45,9 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Snipmate, dependencies and snippets
-Bundle 'tomtom/tlib_vim'              , {'name': 'tlib'}
-Bundle 'MarcWeber/vim-addon-mw-utils' , {'name': 'markweber-utils'}
-Bundle 'garbas/vim-snipmate'          , {'name': 'snipmate'}
-Bundle 'payneio/snipmate-snippets'
 Bundle 'tpope/vim-abolish'                , {'name': 'abolish'}
 Bundle 'mileszs/ack.vim'                  , {'name': 'ack'}
 Bundle 'Align'                            , {'name': 'align'}
-Bundle 'vim-scripts/Arduino-syntax-file'  , {'name': 'arduino-syntax-file'}
 Bundle 'ntpeters/vim-better-whitespace'   , {'name': 'vim-better-whitespace'}
 Bundle 'tpope/vim-bundler'                , {'name': 'bundler'}
 Bundle 'camelcasemotion'                  , {'name': 'camelcasemotion'}
@@ -60,12 +55,10 @@ Bundle 'kchmck/vim-coffee-script'         , {'name': 'coffeescript'}
 Bundle 'Conque-Shell'                     , {'name': 'conque-shell'}
 Bundle 'Color-Scheme-Explorer'            , {'name': 'cs-explorer'}
 Bundle 'kien/ctrlp.vim'                   , {'name': 'ctrlp'}
-Bundle 'tpope/vim-cucumber'               , {'name': 'cucumber'}
 Bundle 'tpope/vim-endwise'                , {'name': 'endwise'}
 Bundle 'tpope/vim-fugitive'               , {'name': 'fugitive'}
 Bundle 'tpope/vim-git'                    , {'name': 'git'}
 Bundle 'airblade/vim-gitgutter'           , {'name': 'gitgutter'}
-Bundle 'tpope/vim-haml'                   , {'name': 'haml'}
 Bundle 'michaeljsmith/vim-indent-object'  , {'name': 'indent_object'}
 Bundle 'wgibbs/vim-irblack'               , {'name': 'irblack'}
 Bundle 'pangloss/vim-javascript'          , {'name': 'javascript'}
@@ -77,7 +70,6 @@ Bundle 'xolox/vim-notes'                  , {'name': 'notes'}
 Bundle 'ajf/puppet-vim'                   , {'name': 'puppet'}
 Bundle 'pylint.vim'                       , {'name': 'pylint'}
 Bundle 'python.vim--Vasiliev'             , {'name': 'python-syntax'}
-Bundle 'tpope/vim-rails'                  , {'name': 'rails'}
 Bundle 'vim-scripts/Rainbow-Parenthesis'  , {'name': 'rainbow-parenthesis'}
 Bundle 'tpope/vim-repeat'                 , {'name': 'repeat'}
 Bundle 'skwp/vim-rspec'                   , {'name': 'rspec'}
@@ -86,7 +78,6 @@ Bundle 'altercation/vim-colors-solarized' , {'name': 'solarized'}
 Bundle 'jdevera/vim-stl-syntax'           , {'name': 'stl-syntax'}
 Bundle 'ervandew/supertab'                , {'name': 'supertab'}
 Bundle 'tpope/vim-surround'               , {'name': 'surround'}
-" Bundle 'scrooloose/syntastic'             , {'name': 'syntastic'}
 Bundle 'majutsushi/tagbar'                , {'name': 'tagbar'}
 Bundle 'vim-scripts/taglist.vim'          , {'name': 'taglist'}
 Bundle 'repos-scala/scala-vundle'         , {'name': 'scala'}
