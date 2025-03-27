@@ -5,7 +5,7 @@
 clone_vundle()
 {
     [[ -d vim/bundle/vundle/.git ]] && return 1
-    git clone git://github.com/gmarik/vundle.git vim/bundle/vundle
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     return 0
 }
 
@@ -35,8 +35,8 @@ install_home()
         fi
     done
 
-    clone_vundle    || ( echo "Vundle is already installed"; return 1 )
-    get_vim_bundles || ( echo "Could not clone vim bundles"; return 1 )
+#    clone_vundle    || ( echo "Vundle is already installed"; return 1 )
+#    get_vim_bundles || ( echo "Could not clone vim bundles"; return 1 )
 }
 
 

@@ -1,7 +1,7 @@
 " This .vimrc requires vundle to manage extension packages.
 " The .dotfiles install installs vundle.
 " If you want to use this .vimrc without the .dotfiles, you will need:
-" # git clone git://github.com/gmarik/vundle.git .vim/bundle/vundle
+" # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 set nocompatible
 " {{{ Multiplatform compatibility
@@ -32,70 +32,29 @@ endif
 filetype off
 
 " Add vundle to the runtime path
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 
 " Call Vundle
-call vundle#rc()
+call vundle#begin()
 
 " ===========================================================================
 " General bundles
 " ===========================================================================
 
 " Manage vundle with vundle
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
-" Snipmate, dependencies and snippets
-Bundle 'tpope/vim-abolish'                , {'name': 'abolish'}
-Bundle 'mileszs/ack.vim'                  , {'name': 'ack'}
-Bundle 'Align'                            , {'name': 'align'}
-Bundle 'ntpeters/vim-better-whitespace'   , {'name': 'vim-better-whitespace'}
-Bundle 'tpope/vim-bundler'                , {'name': 'bundler'}
-Bundle 'camelcasemotion'                  , {'name': 'camelcasemotion'}
-Bundle 'kchmck/vim-coffee-script'         , {'name': 'coffeescript'}
-Bundle 'Conque-Shell'                     , {'name': 'conque-shell'}
-Bundle 'Color-Scheme-Explorer'            , {'name': 'cs-explorer'}
-Bundle 'kien/ctrlp.vim'                   , {'name': 'ctrlp'}
-Bundle 'tpope/vim-endwise'                , {'name': 'endwise'}
-Bundle 'tpope/vim-fugitive'               , {'name': 'fugitive'}
-Bundle 'tpope/vim-git'                    , {'name': 'git'}
-Bundle 'airblade/vim-gitgutter'           , {'name': 'gitgutter'}
-Bundle 'michaeljsmith/vim-indent-object'  , {'name': 'indent_object'}
-Bundle 'wgibbs/vim-irblack'               , {'name': 'irblack'}
-Bundle 'pangloss/vim-javascript'          , {'name': 'javascript'}
-Bundle 'hallison/vim-markdown'            , {'name': 'markdown'}
-Bundle 'matchit.zip'                      , {'name': 'matchit'}
-Bundle 'xolox/vim-misc'                   , {'name': 'vim-misc'}
-Bundle 'scrooloose/nerdcommenter'         , {'name': 'nerdcommenter'}
-Bundle 'xolox/vim-notes'                  , {'name': 'notes'}
-Bundle 'ajf/puppet-vim'                   , {'name': 'puppet'}
-Bundle 'pylint.vim'                       , {'name': 'pylint'}
-Bundle 'python.vim--Vasiliev'             , {'name': 'python-syntax'}
-Bundle 'vim-scripts/Rainbow-Parenthesis'  , {'name': 'rainbow-parenthesis'}
-Bundle 'tpope/vim-repeat'                 , {'name': 'repeat'}
-Bundle 'skwp/vim-rspec'                   , {'name': 'rspec'}
-Bundle 'vim-scripts/ShowMarks'            , {'name': 'showmarks'}
-Bundle 'altercation/vim-colors-solarized' , {'name': 'solarized'}
-Bundle 'jdevera/vim-stl-syntax'           , {'name': 'stl-syntax'}
-Bundle 'ervandew/supertab'                , {'name': 'supertab'}
-Bundle 'tpope/vim-surround'               , {'name': 'surround'}
-Bundle 'majutsushi/tagbar'                , {'name': 'tagbar'}
-Bundle 'vim-scripts/taglist.vim'          , {'name': 'taglist'}
-Bundle 'repos-scala/scala-vundle'         , {'name': 'scala'}
-Bundle 'vim-scripts/searchfold.vim'       , {'name': 'searchfold'}
-Bundle 'timcharper/textile.vim'           , {'name': 'textile'}
-Bundle 'davidoc/todo.txt-vim'             , {'name': 'todo-txt'}
-Bundle 'tpope/vim-unimpaired'             , {'name': 'unimpaired'}
-Bundle 'fatih/vim-go'                     , {'name': 'vim-go'}
-Bundle 'jpalardy/vim-slime'               , {'name': 'vim-slime'}
-Bundle 'vim-scripts/vimwiki.git'          , {'name': 'vimwiki'}
-Bundle 'tpope/vim-vividchalk.git'         , {'name': 'vividchalk'}
-Bundle 'vim-scripts/ZoomWin'              , {'name': 'zoomwin'}
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+
+
 " Load additional local bundles. The local/bundles.vim file, if it exists,
 " contains Bundle specs that make sense only in the current machine. That file
 " is not tracked. See also the *Local configurations* section below.
 if filereadable(expand('~/.vim/local/bundles.vim'))
     execute 'source ' . expand('~/.vim/local/bundles.vim')
 endif
+call vundle#end()
 
 " }}}
 " {{{ Behaviour?
