@@ -2,14 +2,46 @@
 
 These are the configuration files I want to have in every Linux box I use.
 
-Original files copied from jdevera/dotfiles. As these are highly opinionated,
-I don't recommend a fork.
+Original files copied from jdevera/dotfiles and heavily modified over time.
+
+## Directory Structure
+
+```
+dotfiles/
+├── symlink/         # Files to be symlinked into home directory
+│   ├── bashrc       # Will become ~/.bashrc as a symlink
+│   ├── inputrc      # Will become ~/.inputrc as a symlink
+│   └── bash.d/      # Will become ~/.bash.d/ as a symlink
+│       └── ...      # All files maintained as symlinks
+│
+├── copy/            # Files to be copied into home directory
+│   ├── .local/bin/  # Will become ~/.local/bin/ as a copy
+│   └── .gitconfig.tpl # Template for ~/.gitconfig
+│
+└── install.sh       # Installation script
+```
 
 ## Installation
 
-    git clone git://github.com/payneio/dotfiles ~/.dotfiles
-    cd ~/.dotfiles
-    bash install
+```bash
+git clone git://github.com/payneio/dotfiles ~/.dotfiles
+cd ~/.dotfiles
+./install.sh
+```
+
+## Directory-Based Approach
+
+This dotfiles repository uses a directory-based approach:
+
+- **symlink/** - Contains files that are installed as **symlinks**
+  - Changes to the repo immediately affect your environment
+  - Easy to track and commit changes back to the repo
+  - Ideal for configuration files (bashrc, inputrc, etc.)
+
+- **copy/** - Contains files that are installed as **copies**
+  - Can be modified on each machine without affecting the repo
+  - More robust if the repository is unavailable
+  - Better for installation scripts and documentation
 
 ## A few more things to do on initial install
 
@@ -18,50 +50,33 @@ I don't recommend a fork.
 
 ## Contents
 
-Most files handle Bash or Vim configuration, additional files for utilities
-such as GNU Screen and Git.
+This dotfiles repository contains configuration for:
 
-### Configuration file generators
+### Bash Configuration
 
-There are some configuration files, such as _.gitconfig_ that might contain
-sensitive data or that have contents that vary across different machines. For
-these cases, a generator is used. 
+Bash configuration files live in the `.bash.d` directory.
 
-These generators are simple bash scripts containing a template for the
-file they generate. The values for variable fields are requested during
-execution or they can be provided with environment variables for unattended
-installation.
+`.bashrc` sources configuration files in this order:
 
-### Bash configuration
+ * Every file under `.bash.d/local/before/`
+ * Every file under `.bash.d/`
+ * Every file under `.bash.d/local/after/`
 
-bash configuration files live in the _.bash.d_ directory.
-
-_.bashrc_. sources configuration files in this order:
-
- * Every file under _.bash.d/local/before_
- * Every file under _.bash.d_
- * Every file under _.bash.d/local/after_
-
-Contents of _.bash.d/local_ are not tracked by git, so this is the place to
+Contents of `.bash.d/local/` are not tracked by git, so this is the place to
 add configuration files that are specific for the current machine.
 
-### Vim configuration
+### Template Files
 
-Using [Gmarik's Vundle](https://github.com/gmarik/vundle) Vim plug-in to
-manage Vim add-ons and keep them up to date.
+Some configuration files (like `.gitconfig`) might contain sensitive data
+or need machine-specific values. These are handled as templates.
 
-Vundle clones each add-on under its own directory and adds it to
-Vim's runtime path.
+Template files:
+- End with `.tpl` extension
+- Use `{{VARIABLE}}` format for placeholders
+- Are processed by the `process_template.sh` script during installation
 
-All add-ons in the official Vim's website are actively mirrored in github by
-the [Vim-Scripts.org](http://vim-scripts.org/) project. This means Vundle can
-be used to install any add-on published in the official site.
+### Utility Scripts
 
-Use command :BundleInstall! inside vim to update all plug-ins. 
-
-### Utility Bash scripts
-Put them in bin
-
-<!--
-vim:linebreak:textwidth=78:spell:
--->
+Utility scripts are stored in `.local/bin/` and will be copied to your
+home directory during installation. This ensures they're available in your
+PATH.

@@ -1,3 +1,0 @@
-brew install ctags
-echo "alias ctags=\"`brew --prefix`/bin/ctags\"" > bash.d/local/after/ctags.sh
-

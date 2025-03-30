@@ -1,15 +1,8 @@
-#!/bin/bash
-
-[[ -z ${GIT_NAME+x}         ]] && read -p "Your Name: " GIT_NAME
-[[ -z ${GIT_EMAIL+x}        ]] && read -p "Your Email: " GIT_EMAIL
-[[ -z ${GITHUB_USER+x}      ]] && read -p "GitHub Username: " GITHUB_USER
-
-cat <<EOF
 [user]
-    name = $GIT_NAME
-    email = $GIT_EMAIL
+    name = {{GIT_NAME}}
+    email = {{GIT_EMAIL}}
 [github]
-    user = $GITHUB_USER
+    user = {{GITHUB_USER}}
 [alias]
     st = status
     ci = commit
@@ -74,5 +67,3 @@ cat <<EOF
     reflogExpire = 180 days
     reflogExpireUnreachable = 90 days
     pruneExpire = 3 months ago
-EOF
-# vim: filetype=bash :

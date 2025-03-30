@@ -93,7 +93,10 @@ delfrompath()
 ##############################################################################
 # }}}
 
-pathprepend "$HOME/.bin"
-pathprepend "$HOME/bin"
+# Standard XDG directories first
 pathprepend "$HOME/.local/bin"
+# Then legacy directories 
+pathprepend "$HOME/bin"
+# .bin is deprecated - use .local/bin instead
+# pathprepend "$HOME/.bin"
 

@@ -8,10 +8,3 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-if [[ $OSTYPE = darwin* ]]; then
-  export CLICOLOR=1
-  export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-  # Tell grep to highlight matches
-  export GREP_OPTIONS='--color=auto'
-fi
-
