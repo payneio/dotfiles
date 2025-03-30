@@ -1,8 +1,18 @@
-bash.d/local/before/*
-!bash.d/local/before/.empty
-bash.d/local/after/*
-!bash.d/local/after/.empty
+# Ignore local bash configuration
+symlink/bash.d/local/before/*
+!symlink/bash.d/local/before/.gitkeep
+symlink/bash.d/local/after/*
+!symlink/bash.d/local/after/.gitkeep
+
+# Ignore editor temporary files
 *.swp
+*.swo
+*~
+.*.un~
+*.bak
 *.DS_Store
-vars/*
-!vars/README.md
+
+# Ignore potentially sensitive information
+.env
+*.key
+*.pem

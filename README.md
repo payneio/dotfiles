@@ -2,9 +2,19 @@
 
 These are the configuration files I want to have in every Linux box I use.
 
-Original files copied from jdevera/dotfiles and heavily modified over time.
-
 ## Directory Structure
+
+This dotfiles repository uses a directory-based approach:
+
+- **symlink/** - Contains files that are installed as **symlinks**
+  - Changes to the repo immediately affect your environment
+  - Easy to track and commit changes back to the repo
+  - Ideal for configuration files (bashrc, inputrc, etc.)
+
+- **copy/** - Contains files that are installed as **copies**
+  - Can be modified on each machine without affecting the repo
+  - More robust if the repository is unavailable
+  - Better for installation scripts and documentation
 
 ```
 dotfiles/
@@ -24,29 +34,10 @@ dotfiles/
 ## Installation
 
 ```bash
-git clone git://github.com/payneio/dotfiles ~/.dotfiles
-cd ~/.dotfiles
+git clone git://github.com/payneio/dotfiles
+cd dotfiles
 ./install.sh
 ```
-
-## Directory-Based Approach
-
-This dotfiles repository uses a directory-based approach:
-
-- **symlink/** - Contains files that are installed as **symlinks**
-  - Changes to the repo immediately affect your environment
-  - Easy to track and commit changes back to the repo
-  - Ideal for configuration files (bashrc, inputrc, etc.)
-
-- **copy/** - Contains files that are installed as **copies**
-  - Can be modified on each machine without affecting the repo
-  - More robust if the repository is unavailable
-  - Better for installation scripts and documentation
-
-## A few more things to do on initial install
-
-  On an ubuntu box, set up solarized color theme using:
-  ./ubuntu_post_install
 
 ## Contents
 
