@@ -32,3 +32,8 @@ if hash xdg-open 2>/dev/null; then
 fi
 
 alias cls='clear && printf "\e[3J"'
+
+alias glance='glance --config $HOME/.config/glance/glance.yml'
+alias glance-edit='code --wait $HOME/.config/glance/glance.yml'
+alias github-login='env -u DISPLAY BROWSER=false gh auth login --hostname github.com --git-protocol https --web'
+
