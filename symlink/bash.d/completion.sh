@@ -23,28 +23,6 @@ _cdp() {
 # NOTE: '-o filenames' escapes special characters, whereas '-o dirnames' doesn't
 complete -o filenames -o nospace -F _cdp cdp
 
-# Bash completion for rabbitvcs modules
-# ---------------------------------------------------------------------------
-_rabitvcs_opts()
-{
-    rabbitvcs 2>&1 |
-    sed '
-        5,/^$/!d
-        s/,\s*/,/g
-    ' |
-    awk -F',' '
-        {
-            for (i = 1; i < NF; i++) { arr[length(arr)] = $i }
-        }
-        END{
-            for (e in arr) { print arr[e] }
-        }' | 
-    grep "^$2.*";
-}
-complete -C _rabitvcs_opts -o default rabbitvcs
-
-# ---------------------------------------------------------------------------
-
 
 # ANSI colours
 # ---------------------------------------------------------------------------
@@ -57,11 +35,9 @@ complete -C _complete_ansi_color -o default set_prompt_color
 complete -C _complete_ansi_color -o default ansi_color
 # ---------------------------------------------------------------------------
 
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
