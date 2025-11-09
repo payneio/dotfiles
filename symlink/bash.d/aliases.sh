@@ -1,16 +1,7 @@
 #!/bin/bash
 
-alias vish='vim $DBASH'
-alias gvish='gvim $DBASH'
 alias reloadsh='source $HOME/.bashrc'
-
 alias myalias='showaliases $DBASH/* $DBASH/local/after/* $DBASH/local/before/*'
-
-alias vivi='vim $HOME/.vimrc'
-alias gvivi='gvim $HOME/.vimrc'
-
-alias viil='vim $DSYSDATA/install.log -c "\$"'
-alias gviil='gvim $DSYSDATA/install.log -c "\$"'
 
 alias ..='cd ..'
 alias ..2='cd ../..'
@@ -25,7 +16,6 @@ alias dumd='du --max-depth'
 alias clearcache='sudo sync; sudo echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null'
 
 alias mc='mv' 
-alias cdp='. cdp.sh'
 
 if hash xdg-open 2>/dev/null; then
   alias open='xdg-open'
