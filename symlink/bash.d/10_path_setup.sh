@@ -1,18 +1,19 @@
 #!/bin/bash
 
 # Directories
-export DDOC=$HOME/Documents
-export DMEDIA=$HOME/media
-export DBACKUP=$HOME/backup
-export DDOWN=$HOME/Downloads
-export DSYSDATA=$DADMIN/data
-export DBASH=$HOME/.bash.d
-export DDESKTOP=$DOTHER/Desktop
 export DAPTCACHE=/var/cache/apt/archives
+export DBACKUP=$HOME/backup
+export DBASH=$HOME/.bash.d
+export DBIN=$HOME/.local/bin
+export DDESKTOP=$DOTHER/Desktop
+export DDOC=$HOME/Documents
+export DDOWN=$HOME/Downloads
+export DMEDIA=$HOME/media
+export DSYSDATA=$DADMIN/data
 
 # Files
-export FSYSLOG=/var/log/syslog
 export FILOG=$DSYSDATA/install.log
+export FSYSLOG=/var/log/syslog
 
 # Path functions {{{
 ##############################################################################
@@ -92,10 +93,4 @@ delfrompath()
 ##############################################################################
 # }}}
 
-# Standard XDG directories first
-pathprepend "$HOME/.local/bin"
-# Then legacy directories 
-pathprepend "$HOME/bin"
-# .bin is deprecated - use .local/bin instead
-# pathprepend "$HOME/.bin"
-
+pathprepend "$DBIN"
