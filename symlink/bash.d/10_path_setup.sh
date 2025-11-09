@@ -9,7 +9,6 @@ export DSYSDATA=$DADMIN/data
 export DBASH=$HOME/.bash.d
 export DDESKTOP=$DOTHER/Desktop
 export DAPTCACHE=/var/cache/apt/archives
-export DPROJECTS=$HOME/projects
 
 # Files
 export FSYSLOG=/var/log/syslog
