@@ -1,4 +1,7 @@
-# cdp and aliases
+# cdp and aliases. This setup allows you to quickly navigate to predefined
+# directory paths with tab completion. For example, if CDP_DIRS contains paths
+# like "/home/projects" and "/var/www", typing "cdp pro<tab>" would complete to
+# directories under "/home/projects".
 _cdp() {
     local IFS=$'\t\n'
     local dirs=$(echo ${COMP_WORDS[0]} | tr [:lower:] [:upper:])_DIRS[@]
@@ -22,6 +25,9 @@ _cdp() {
 
 # NOTE: '-o filenames' escapes special characters, whereas '-o dirnames' doesn't
 complete -o filenames -o nospace -F _cdp cdp
+
+
+# ---------------------------------------------------------------------------
 
 
 # ANSI colours
