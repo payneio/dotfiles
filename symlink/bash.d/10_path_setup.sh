@@ -1,15 +1,16 @@
 #!/bin/bash
 
 # Directories
-export DAPTCACHE=/var/cache/apt/archives
-export DBACKUP=$HOME/backup
-export DBASH=$HOME/.bash.d
-export DBIN=$HOME/.local/bin
-export DDESKTOP=$DOTHER/Desktop
-export DDOC=$HOME/Documents
-export DDOWN=$HOME/Downloads
-export DMEDIA=$HOME/media
-export DSYSDATA=$DADMIN/data
+export DAPTCACHE="${DAPTCACHE:-/var/cache/apt/archives}"
+export DBACKUP="${DBACKUP:-$HOME/backup}"
+export DBASH="${DBASH:-$HOME/.bash.d}"
+export DBIN="${DBIN:-$HOME/.local/bin}"
+export DDESKTOP="${DDESKTOP:-$DOTHER/Desktop}"
+export DDOC="${DDOC:-$HOME/Documents}"
+export DDOWN="${DDOWN:-$HOME/Downloads}"
+export DMEDIA="${DMEDIA:-$HOME/media}"
+export DADMIN="${DADMIN:-/usr/local/admin}"
+export DSYSDATA="${DSYSDATA:-$DADMIN/data}"
 
 # Files
 export FILOG=$DSYSDATA/install.log
