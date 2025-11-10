@@ -19,6 +19,17 @@ source_dir()
     fi
 }
 
-source_dir ~/.bash.d/local/before
+CYAN='\033[0;36m'
+echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+
+if [[ -d "$HOME/.bash.d.local/before" ]]; then
+    source_dir "$HOME/.bash.d.local/before"
+fi
+
 source_dir ~/.bash.d
-source_dir ~/.bash.d/local/after
+
+if [[ -d "$HOME/.bash.d.local/after" ]]; then
+    source_dir ~/.bash.d.local/after
+fi
+
+echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
