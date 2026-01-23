@@ -3,27 +3,6 @@
 # Initialize zsh completion system
 autoload -Uz compinit && compinit
 
-# cdp and aliases. This setup allows you to quickly navigate to predefined
-# directory paths with tab completion. For example, if CDP_DIRS contains paths
-# like "/home/projects" and "/var/www", typing "cdp pro<tab>" would complete to
-# directories under "/home/projects".
-_cdp() {
-    local dirs_var="${words[1]:u}_DIRS"
-    local -a dirs completions
-    dirs=(${(P)dirs_var})
-    for dir in $dirs; do
-        if [[ -d "$dir" ]]; then
-            completions+=("$dir"/*(/:t))
-        fi
-    done
-    _describe 'directories' completions
-}
-compdef _cdp cdp
-
-
-# ---------------------------------------------------------------------------
-
-
 # ANSI colours
 # ---------------------------------------------------------------------------
 _complete_ansi_color()
