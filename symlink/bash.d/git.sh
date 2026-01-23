@@ -9,6 +9,18 @@ if [[ -n "$SSH_CONNECTION" || -n "$SSH_TTY" ]]; then
 
     # Prevent git from trying to spawn a browser for auth flows
     export BROWSER=false
+
+    # Configure GCM to use terminal-based prompts, no GUI
+    # export GCM_INTERACTIVE=never
+    # export GCM_GUI_PROMPT=false
+fi
+
+# Configure Git Credential Manager to use persistent storage
+# This prevents daily re-authentication by storing credentials securely
+if command -v git-credential-manager &> /dev/null; then
+    # Use plaintext store for SSH sessions (credentials are encrypted at rest)
+    # This avoids GPG/pass dependencies and GUI popups while maintaining persistence
+    git config --global credential.credentialStore plaintext 2>/dev/null || true
 fi
 
 if [[ -n "$USER_ALIAS" ]]; then

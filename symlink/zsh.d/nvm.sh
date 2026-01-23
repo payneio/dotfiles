@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-nvm_file=$HOME/.nvm/nvm.sh
-if [ -f $nvm_file ]; then
+if [ -f "$HOME/.nvm/nvm.sh" ]; then
   export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  . "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/zsh_completion" ] && . "$NVM_DIR/zsh_completion"
   echo "nvm ready."
 fi

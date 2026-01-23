@@ -6,27 +6,14 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 # Prompt Items:
-# 
+#
 #   \u              Username of the current user
 #   \h              Hostname up to the first '.'
 #   \w              Current working directory
 #   $debian_chroot  Current chroot (if any)
-#   `__git_ps1`     Current git branch if any
 #
-PS1NOCOLOR='\[\033[0m\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 PS1NOCOLOR='\u@\h:\w\$ '
 PS1="\[\033[0m\]$PS1NOCOLOR"
-
-# # If this is an xterm set the title to user@host:dir
-# case "$TERM" in
-# xterm*|rxvt*)
-#     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-#     ;;
-# *)
-#     ;;
-# esac
-
-
 
 ansi_color()
 {
@@ -77,9 +64,9 @@ set_prompt_color()
    local nocolor="\[$(ansi_color none)\]"
    PS1BAK="$PS1"
    PS1="${promptcolor}${PS1NOCOLOR}${nocolor}"
-}  
+}
 
 default_prompt_color()
 {
-   PS1='\[\033[0m\]$PS1NOCOLOR'
+   PS1="\[\033[0m\]$PS1NOCOLOR"
 }

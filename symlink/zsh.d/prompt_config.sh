@@ -13,11 +13,8 @@ fi
 #   %#              # for root, % for regular user
 #   $debian_chroot  Current chroot (if any)
 #
-PS1NOCOLOR='${debian_chroot:+($debian_chroot)}%n@%m:%~%# '
 PS1NOCOLOR='%n@%m:%~%# '
 PS1="$PS1NOCOLOR"
-
-
 
 ansi_color()
 {

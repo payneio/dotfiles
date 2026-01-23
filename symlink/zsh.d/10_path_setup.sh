@@ -5,7 +5,7 @@ export DAPTCACHE="${DAPTCACHE:-/var/cache/apt/archives}"
 export DBACKUP="${DBACKUP:-$HOME/backup}"
 export DZSH="${DZSH:-$HOME/.zsh.d}"
 export DBIN="${DBIN:-$HOME/.local/bin}"
-export DDESKTOP="${DDESKTOP:-$DOTHER/Desktop}"
+export DDESKTOP="${DDESKTOP:-$HOME/Desktop}"
 export DDOC="${DDOC:-$HOME/Documents}"
 export DDOWN="${DDOWN:-$HOME/Downloads}"
 export DMEDIA="${DMEDIA:-$HOME/media}"
@@ -42,7 +42,7 @@ addtopath()
     a_directory="$1"
     a_position="$2"
 
-    a_directory=`echo "$a_directory" | sed 's#/$##'`  # remove trailing slash
+    a_directory=$(echo "$a_directory" | sed 's#/$##')  # remove trailing slash
 
     # Add only existing directories
     [[ ! -d $a_directory ]] && return 1
@@ -50,7 +50,7 @@ addtopath()
     # If the directory is already in the path, remove it so that
     # it can be inserted in the desired position without
     # poluting $PATH with duplicates
-    newpath=`echo $PATH | myrmlistitems "$a_directory" ':'`
+    newpath=$(echo "$PATH" | myrmlistitems "$a_directory" ':')
 
     if [[ $a_position == beg ]]; then    # Prefix to $PATH
         export PATH=$a_directory:$newpath
@@ -68,8 +68,8 @@ addtopath()
 ##############################################################################
 # Convenience wrappers for addtopath
 #
-pathappend()  { addtopath $1 end; return $?; }
-pathprepend() { addtopath $1 beg; return $?; }
+pathappend()  { addtopath "$1" end; return $?; }
+pathprepend() { addtopath "$1" beg; return $?; }
 #
 ##############################################################################
 
@@ -89,7 +89,7 @@ delfrompath()
 {
     a_directory="$1"
 
-    export PATH=`echo $PATH | myrmlistitems "$a_directory" ':'`
+    export PATH=$(echo "$PATH" | myrmlistitems "$a_directory" ':')
 }
 ##############################################################################
 # }}}

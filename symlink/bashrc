@@ -20,6 +20,7 @@ source_dir()
 }
 
 CYAN='\033[0;36m'
+NC='\033[0m'
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
 if [[ -d "$HOME/.bash.d.local/before" ]]; then
@@ -33,3 +34,11 @@ if [[ -d "$HOME/.bash.d.local/after" ]]; then
 fi
 
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+
+# pnpm
+export PNPM_HOME="/home/payne/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

@@ -13,7 +13,7 @@ alias '..?'='show_parent_dirs'
 alias du1='du --max-depth 1'
 alias dumd='du --max-depth'
 
-alias clearcache='sudo sync; sudo echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null'
+alias clearcache='sudo sync; echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null'
 
 alias mc='mv'
 

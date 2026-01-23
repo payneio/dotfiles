@@ -1,5 +1,5 @@
 #!/bin/zsh
 
-if hash docker 2>/dev/null && [ -f $IP_FILE ]; then
+if hash docker 2>/dev/null; then
   echo "docker ready."
 fi
