@@ -70,3 +70,18 @@ default_prompt_color()
 {
    PS1="\[\033[0m\]$PS1NOCOLOR"
 }
+
+# Starship prompt (overrides PS1 if available)
+if command -v starship &>/dev/null; then
+   # Install Nerd Font if not present (required for starship icons)
+   NERD_FONT_DIR="$HOME/.local/share/fonts/NerdFonts"
+   if [ ! -d "$NERD_FONT_DIR" ]; then
+      echo "Installing JetBrainsMono Nerd Font for starship..."
+      mkdir -p "$NERD_FONT_DIR"
+      curl -fsSL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz \
+         | tar -xJf - -C "$NERD_FONT_DIR"
+      fc-cache -fv "$NERD_FONT_DIR" >/dev/null 2>&1
+      echo "Nerd Font installed. Set your terminal font to 'JetBrainsMono Nerd Font'."
+   fi
+   eval "$(starship init bash)"
+fi
